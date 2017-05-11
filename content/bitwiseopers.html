@@ -37,10 +37,10 @@
 	<section class="main container">
 		<div class="article">
 			<h2>Javascript bitwise operators and how to use them</h2>
-			<p>The majority of javascript developers knows about bitwise operators and binary representations of numbers. However if you asked them where in web development we can use those operators you rarely hear a clear answer. So was I until I started to use them in one  project where we had to grant and control different user roles on the webportal.</p>
+			<p>The majority of javascript developers knows about bitwise operators and binary representations of numbers. However if you asked them where in web development we can use those operators you rarely hear a clear answer. So was I until I started to use bitwise operators in one project where we had to grant and control different user roles on the webportal.</p>
 			<p>But let's start from the very beginning. If you familiar enough with bitwise operators and how they work you can <a href="#usage" class="slide">skip to the practice part</a>.</p>
 			<div id="theoria">
-				<p>As you may know every number has it binary representation. Javascript has method <code>.toString(2)</code> (argument 2 means base) that allows to convert number from decimal to binary represantation. Also you can use <code>.parseInt('0100', 2)</code> method to convert from binary number to decimal.</p>
+				<p>As you may know every number has it binary representation. Javascript has method <code>.toString(2)</code> (argument 2 means base) that allows to convert number from decimal to binary represantation. Also you can use <code>parseInt('0100', 2)</code> method to convert from binary number to decimal.</p>
 				<iframe style="width: 100%; height: 200px; " src="https://jsfiddle.net/alex_o/fakyv29q/5/embedded" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 				<p>There are seven bitwise operators in Javascript. Each of this operator works only with binary representation of numbers. Operators with 2 operands (like a&amp;b, a|b) work with pair of bits, where the first bit comes from first operand and the second bit comes from the same position of the second operand.</p>
 				<ol>
@@ -192,7 +192,7 @@
 								<td class="text-left">0 1 0 1 0</td>
 							</tr>
 						</table>
-						<p>In most cases left shift &lt;&lt;N works the same way as multiply number by 2 N times. But you must remember that operators works with 32bit signed numbers, so <code>10000000000 &lt;&lt; 1</code> will return -1474836480, not 20000000000.</p>
+						<p>In most cases left shift &lt;&lt; n works the same way as multiply number by 2 n times. But you must remember that operators works with 32bit signed numbers, so <code>10000000000 &lt;&lt; 1</code> will return -1474836480, not 20000000000.</p>
 						<iframe src="https://jsfiddle.net/alex_o/k799rz9a/embedded"  width="100%" height="150px" frameborder="0"></iframe>
 					</li>
 					<li><h4>Signed right shift &gt;&gt;</h4>
@@ -211,7 +211,7 @@
 								<td class="text-left">0 0 0 1 0</td>
 							</tr>
 						</table>
-						<p>In most cases left shift &gt;&gt;N works the same way as divide number by 2 N times. </p>
+						<p>In most cases left shift &gt;&gt; n works the same way as divide number by 2 n times. </p>
 						<iframe src="https://jsfiddle.net/alex_o/L525c7v6/embedded"  width="100%" height="150px" frameborder="0"></iframe>
 					</li>
 					<li><h4>Zero fill right shift &gt;&gt;&gt;</h4>
@@ -239,7 +239,7 @@
 				<p>Usually bitwise operators in javascript are used for masks/flags, rarer for work with numbers, RGB(A) values, communication over ports/sockets and for compression and encryption. </p>
 				<ol>
 					<li><h4>Mask</h4>
-						<p>Let's imagine that we have different users on 1 webportal: admin, editor and user. Understandable, that every role has different access level and different capabilities:</p>
+						<p>Let's imagine that we have different users on 1 webportal: admin, editor, author and guest. Understandable, that every role has different access level and different capabilities:</p>
 						<table class="roles">
 							<tr>
 								<td>Role</td>
