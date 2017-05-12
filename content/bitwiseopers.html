@@ -41,7 +41,7 @@
 			<p>But let's start from the very beginning. If you familiar enough with bitwise operators and how they work you can <a href="#usage" class="slide">skip to the practice part</a>.</p>
 			<div id="theoria">
 				<p>As you may know every number has it binary representation. Javascript has method <code>.toString(2)</code> (argument 2 means base) that allows to convert number from decimal to binary represantation. Also you can use <code>parseInt('0100', 2)</code> method to convert from binary number to decimal.</p>
-				<iframe style="width: 100%; height: 200px; " src="https://jsfiddle.net/alex_o/fakyv29q/5/embedded" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+				<iframe style="width: 100%; height: 200px; " src="https://jsfiddle.net/alex_o/fakyv29q/5/embedded/js,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 				<p>There are seven bitwise operators in Javascript. Each of this operator works only with binary representation of numbers. Operators with 2 operands (like a&amp;b, a|b) work with pair of bits, where the first bit comes from first operand and the second bit comes from the same position of the second operand.</p>
 				<ol>
 					<li><h4>Operator AND &amp;</h4>
@@ -193,7 +193,7 @@
 							</tr>
 						</table>
 						<p>In most cases left shift &lt;&lt; n works the same way as multiply number by 2 n times. But you must remember that operators works with 32bit signed numbers, so <code>10000000000 &lt;&lt; 1</code> will return -1474836480, not 20000000000.</p>
-						<iframe src="https://jsfiddle.net/alex_o/k799rz9a/embedded"  width="100%" height="150px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/k799rz9a/embedded/js,result/"  width="100%" height="150px" frameborder="0"></iframe>
 					</li>
 					<li><h4>Signed right shift &gt;&gt;</h4>
 						<p>This is a sign preserving right shift. Copies of the leftmost bit are pushed in from the left, and the rightmost bits fall off:</p>
@@ -212,7 +212,7 @@
 							</tr>
 						</table>
 						<p>In most cases left shift &gt;&gt; n works the same way as divide number by 2 n times. </p>
-						<iframe src="https://jsfiddle.net/alex_o/L525c7v6/embedded"  width="100%" height="150px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/L525c7v6/embedded/js,result/"  width="100%" height="150px" frameborder="0"></iframe>
 					</li>
 					<li><h4>Zero fill right shift &gt;&gt;&gt;</h4>
 						<p>One or more zero bits are pushed in from the left, and the rightmost bits fall off. For the postitve numbers works the same as &gt;&gt; operator, because in both cases it pushes zero bits. </p>
@@ -230,7 +230,7 @@
 								<td class="text-left">0011 1111 1111 1111 1111 1111 1111 1101</td>
 							</tr>
 						</table>
-						<iframe src="https://jsfiddle.net/alex_o/e1ussdej/embedded" width="100%" height="150px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/e1ussdej/embedded/js,result/" width="100%" height="150px" frameborder="0"></iframe>
 					</li>
 				</ol>
 			</div>
@@ -293,21 +293,21 @@
 							<li>access_read = 1000</li>
 						</ul>
 						<p>So, if user has access with 1 on 1,2 and 3 position, we can say that he can read, edit and delete article.</p>
-						<iframe src="https://jsfiddle.net/alex_o/knh64px4/10/embedded" width="100%" height="400px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/knh64px4/10/embedded/js,result/" width="100%" height="400px" frameborder="0"></iframe>
 						<p>Maybe at first glance this approach seems to be difficult, but if you understand it once, you will notice how it helps to work with roles in easy and elegant way. The only thing you should remember while working with mask, that JavaScript works only with 32 bit numbers.</p>
 					</li>
 					<li><h4>Work with RGB(A)</h4>
 						<p>RGBA is one of the color model, with extra alpha channel, which is normally used for opacity. Color can be represented as a single 32-bit unsigned integer that  has the alpha sample in the highest 8 bits, followed by the red sample, green sample and finally the blue sample in the lowest 8 bits. Normally we set color in the CSS, smth like <code>background-color:rgba(255,0,0,0.3);</code>, but when you work for example with HTML5 canvas element, you might have to work with color right inside javascript. And bitwise operators definetly will help you here.</p>
-						<iframe src="https://jsfiddle.net/alex_o/bL5ggd97/embedded" width="100%" height="250px;" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/bL5ggd97/embedded/js,result/" width="100%" height="250px;" frameborder="0"></iframe>
 					</li>
 					<li><h4>Work with numbers and creative solutions</h4>
 						<p>Some developers prefer to use bitwise operators for rounding numbers. Technically it will work and sometimes it will be faster than <code>Math.floor()</code> or <code>Math.round()</code> But there are some problems in this approach. Let me show you:</p>
-						<iframe src="https://jsfiddle.net/alex_o/awytdagr/embedded" width="100%" height="250px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/awytdagr/embedded/js,result/" width="100%" height="250px" frameborder="0"></iframe>
 						<p>Probably you will remember all these problems and use bitwise operators only when they will work safely, but why don't you use <code>Math.floor()</code> or <code>Math.round()</code>?</p>
 						<p>Also several times I saw bitwise operators used for elegant solution of interview questions. Like swap two values, without using additional variable:</p>
-						<iframe src="https://jsfiddle.net/alex_o/3aqnj98p/embedded" width="100%" height="250px" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/3aqnj98p/embedded/js,result/" width="100%" height="250px" frameborder="0"></iframe>
 						<p>It might work good enough for demostrating your skills in the interview, but in real life it would cause additional problems. How long will junior developer from your team understand the following code:</p>
-						<iframe src="https://jsfiddle.net/alex_o/sdkm03xw/embedded" width="100%" height="250px;" frameborder="0"></iframe>
+						<iframe src="https://jsfiddle.net/alex_o/sdkm03xw/embedded/js,result/" width="100%" height="250px;" frameborder="0"></iframe>
 						<p>In another words bitwise operators give us amazing force to operate with numbers, but we should use it wisely to keep our code clean and maintainable.</p>
 					</li>
 				</ol>
