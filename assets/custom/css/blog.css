@@ -86,6 +86,13 @@ a.viewmore:hover{
 	text-decoration: none;
 }
 
+.article .more{
+	text-decoration: none;
+}
+.article .more:hover{
+	text-decoration: none;
+}
+
 .article .continue-btn{
 	border-radius: 5px;
 	background-color: #a2a2d2;
@@ -94,7 +101,6 @@ a.viewmore:hover{
 	outline: none;
 	display: none;
 }
-
 .article .continue-btn:active{
 
 }
