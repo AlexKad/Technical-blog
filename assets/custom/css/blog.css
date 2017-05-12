@@ -2,14 +2,14 @@ html, body{
 	margin: 0;
 }
 
-.header{	
-	height:40vh;
+.header{		
 	overflow: hidden;
 	background-color: #5e5ea5;	
     color: white;
     letter-spacing: 0.3em;    
     font-family: monospace;
-    text-transform: uppercase;  
+    text-transform: uppercase;
+    padding-bottom:40px;  
 }
 
 .header .navbar{
@@ -58,12 +58,9 @@ html, body{
   from{ border-right: 1px solid orange;}
   to{ border-right: transparent;}
 }
-
-
 .header .viewmore{
 	color: #fff;
 }
-
 .viewmore,
 a.viewmore:visited{	
 	font-size: 40px;
@@ -71,16 +68,35 @@ a.viewmore:visited{
 a.viewmore:hover{
 	color: #343434;
 }
-
-
 .main{
 	padding:20px 10px;
 	font-size: 18px;
 	max-width:750px;
 }
-
 .article{
-	margin-bottom:40px;	
+	margin-bottom:50px;	
+}
+
+.article-header{
+	font-size: 2.7rem;
+	color:#444;
+	line-height: 60px;
+}
+.article-header:hover{
+	text-decoration: none;
+}
+
+.article .continue-btn{
+	border-radius: 5px;
+	background-color: #a2a2d2;
+	color: #FFF;
+	font-size: 1.8rem;
+	outline: none;
+	display: none;
+}
+
+.article .continue-btn:active{
+
 }
 
 .article .continue-btn a{
