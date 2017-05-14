@@ -3,14 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A professional blog of Aleksandra Orlova - an experienced independent web developer. Notes about javascript bitwise operators and where we can use them.">
+	<meta name="keywords" content="javscript; bitwise operators;">	
 	<link rel="shortcut icon" href="../assets/custom/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="../assets/custom/favicon.ico" type="image/x-icon">
 
 	<title>Aleksandra. Web Development</title>
-	
 	<link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/vendors/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/vendors/fontawesome/css/bootstrap-social.css">
@@ -23,7 +21,7 @@
 			<div class="container-fluid">			
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="../index.html">About me</a></li>
-					<li><a href="../blog.html">Blog</a></li>
+					<li><a href="index.html">Blog</a></li>
 				</ul>
 			</div>							
 		</nav>		
@@ -318,13 +316,9 @@
 		<div id="disqus_thread"></div>
 		<script>
 
-		/**
-		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-		/*
-		var disqus_config = function () {
-		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		disqus_config = function () {
+			this.page.url = 'bitwiseopers.html';
+			this.page.identifier = 'article_bitwiseopers';
 		};
 		*/
 		(function() { // DON'T EDIT BELOW THIS LINE
@@ -346,7 +340,7 @@
 	
 
 	<footer class="footer">
-		<p>Copyright © <script>document.write((new Date()).getFullYear())</script> Aleksandra Orlova</p>
+		<p>Copyright © 2017<script>if( (new Date()).getFullYear() != 2017) document.write(' - '+ (new Date()).getFullYear() )</script> Aleksandra Orlova</p>
 		<p>akad.alex@gmail.com</p>
 	</footer>
 	<script src="../assets/vendors/jQuery/jquery-3.1.1.min.js"></script>
