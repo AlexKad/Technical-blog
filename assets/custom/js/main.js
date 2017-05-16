@@ -30,8 +30,8 @@
  }       
 
 $('#back-to-top').click(function (e) {
-    $('#back-to-top').tooltip('hide');
     $('body,html').animate({ scrollTop: 0 }, window.innerHeight);
+    $('#back-to-top').fadeOut();
     return false;
 });
 

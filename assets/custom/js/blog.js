@@ -1,6 +1,6 @@
 $('a.slide').on('click', function(e) {
  	e.preventDefault();
- 	let hash = this.hash; 	
+ 	var hash = this.hash; 	
 
  	$('html, body').animate({ scrollTop: $(hash).offset().top }, 500);
  });
@@ -14,7 +14,8 @@ $(window).scroll(function () {
 });        
 
 $('#back-to-top').click(function (e) {
-    $('body,html').animate({ scrollTop: 0 }, 500);
+    $('body,html').animate({ scrollTop: 0 }, 500);    
+    $('#back-to-top').fadeOut();
     return false;
 });
 
