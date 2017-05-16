@@ -20,7 +20,8 @@ html, body{
 	margin-right: 15px;
 }
 
-.header .navbar a:hover{
+.header .navbar a:hover,
+.header .navbar a:focus{
 	background-color: #5e5ea5;
 	border-bottom: 1px solid white;
 }
@@ -59,7 +60,6 @@ html, body{
   to{ border-right: transparent;}
 }
 
-
 .header .buttons{
 	margin: 0 auto;
 	font-size: 36px;
@@ -87,16 +87,40 @@ a.viewmore:hover{
 	color: #343434;
 }
 
-.skills{
-	padding-top:40px;
-	min-height: 100vh;
-	/*background: #F6F6F6;*/
-	background-color: #fff;
-    color: #555;
-    font-size: 16px;
-    line-height: 24px;
+.about,
+.skills,
+.experience{
+	padding-top:20px;
+	min-height: 100vh;	
+    font-size: 1.9rem;
 }
 
+.next-btn{
+	margin-top:40px;
+}
+
+.about{	
+	background-color: #fff;
+    color: #666;
+}
+
+.img-bck{
+	/*margin-top: 20px;*/
+	margin:10px;
+	opacity:0.85;
+	float: right;
+}
+
+.about .viewmore{	
+	color: #343434;
+}
+.about .viewmore:hover{
+	color: #5e5ea5;
+}
+
+.skills{	
+    background: #FAFAFA;
+}
 ul.skillset{
 	list-style: none;
 	line-height: 40px;
@@ -120,34 +144,41 @@ ul.skillset{
 }
 
 .custom-progressbar .progress-value{
-	background-color:#4CAF50;
+	background-color: #4CAF50;
+	background: linear-gradient(to right, #81ce84, #4CAF50);
 	height: 20px;	
 	transform: translateX(-100%);
 	transition: all 1.7s;
 	-webkit-backface-visibility: hidden;
 }
 
+.about.active .progress-value,
 .skills.active .progress-value{
 	transform: translateX(0%);
 	-webkit-backface-visibility: hidden;
 }
 
-.next-btn{
-	margin-top:12vh;
+ul.statements{
+	margin-top:30px;
+	list-style: none;
 }
-
-.skills .viewmore{	
-	color: #343434;
+.statements li{
+	padding-left: 1.2em;
+    text-indent: -1.2em;
 }
-.skills .viewmore:hover{
-	color: #5e5ea5;
+.statements li:before {
+  content: "\2713";
+  left:0;
+  margin-right: 10px;
 }
-
-.experience{
-	min-height: 100vh;
+ul.statements .highlighted{
+	font-size: 2.2rem;
+	font-weight: bold;
+	color:#33458c;
+}
+.experience{	
 	background: #F6F6F6;
     color: #777;
-    font-size: 16px;
     line-height: 24px;
     overflow: hidden;    
     -webkit-backface-visibility: hidden;
@@ -241,31 +272,33 @@ ul.skillset{
 
 
 .btn-top{
-	border:1px solid #ccc;
+	border:1px solid #ddd;
 	border-radius: 50%;
 	color: #FFF;
 	font-size: 30px;
 	background-color: #ddd;
 	opacity: .7;
 	position: fixed;
-	bottom: 20px;
+	bottom: 110px;
 	right: 30px;
 	width: 60px;
 	height: 60px;
 	padding-left:15px;
 	padding-top:5px;
+	display: none;
+	cursor: pointer;
 }
 
 .btn-top a{
 	color:#FFF;
-	text-decoration: none;
+	text-decoration: none;	
 }
 
 
 .footer{
-	height: 100px;
+	height: 80px;
     clear: both;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     background-color: #4a4a4a;
     color: #d6d6d6;

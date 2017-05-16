@@ -14,8 +14,11 @@ $(window).scroll(function () {
 });        
 
 $('#back-to-top').click(function (e) {
-    $('#back-to-top').tooltip('hide');
     $('body,html').animate({ scrollTop: 0 }, 500);
     return false;
 });
+
+$('.blog-header').click(function(e) {
+	window.location = 'index.html';
+})
         
