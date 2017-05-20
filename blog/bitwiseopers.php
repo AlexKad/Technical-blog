@@ -286,7 +286,7 @@ include('templates/header.php');
 	<script>
 
 	disqus_config = function () {
-		this.page.url = 'http://aleksandraweb.com/blog/bitwiseopers.html';
+		this.page.url = 'http://aleksandraweb.com/blog/bitwiseopers.php';
 		this.page.identifier = 'article_bitwiseopers';
 	};
 	

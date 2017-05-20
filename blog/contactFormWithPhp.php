@@ -67,7 +67,7 @@ include('templates/header.php');
 		<div id="disqus_thread"></div>
 		<script>		
 		var disqus_config = function () {
-			this.page.url = 'http://aleksandraweb.com/blog/contactFormWithPhp.html';
+			this.page.url = 'http://aleksandraweb.com/blog/contactFormWithPhp.php';
 			this.page.identifier = 'article_contactFormPHP';
 		};
 		(function() { // DON'T EDIT BELOW THIS LINE

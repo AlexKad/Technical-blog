@@ -114,7 +114,7 @@ a.viewmore:hover{
 	text-decoration: none;
 }
 
-.article p{
+.article {
 	margin-top:10px;
 	font-weight: 300;
 	text-align: justify;
@@ -122,6 +122,15 @@ a.viewmore:hover{
 
 .article ol{
 	padding-left: 20px;
+}
+
+.article code{
+	color: #1d2863;
+    background-color: #f3f2f9;
+}
+.article .gif_source{
+	border: 1px solid #d8d8d8;
+	margin: 20px auto;
 }
 
 table.example,

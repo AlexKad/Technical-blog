@@ -133,9 +133,9 @@ ul.skillset{
 }
 
 .custom-progressbar {
-	background-color: #eee;
+	background-color: #e6e6e6;
   	border-radius: 2px;
-  	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  	/*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
   	height: 20px;
   	width: calc(100% - 150px);
   	margin-left: 10px;
@@ -166,10 +166,11 @@ ul.statements{
 }
 .statements li{
 	padding-left: 1em;
-    text-indent: -1em;
+    text-indent: -1.4em;
 }
 .statements li:before {
-  content: "\2713";
+  font-family: "Ionicons";
+  content: "\f383";
   left:0;
   margin-right: 10px;
 }

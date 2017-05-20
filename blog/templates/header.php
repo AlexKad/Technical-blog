@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="../../assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/vendors/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../../assets/vendors/fontawesome/css/bootstrap-social.css">
-	<link rel="stylesheet" href="../../assets/custom/css/blog.min.css?v=1">
+	<link rel="stylesheet" href="../../assets/custom/css/blog.min.css?v=1.0">
 		
 </head>
 <body>		
