@@ -116,6 +116,7 @@ a.viewmore:hover{
 
 .article {
 	margin-top:10px;
+	margin-bottom: 50px;
 	font-weight: 300;
 	text-align: justify;
 }
