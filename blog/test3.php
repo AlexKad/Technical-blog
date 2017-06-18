@@ -1,10 +1,14 @@
 <?php
-    $xml=simplexml_load_file("content.xml") or die("Error: Cannot create object");
-    $page = [];
-    for($i=0; $i<5 && $i< count($xml);$i++){
-		$page[$i] = $xml->article[$i];
-		$page[$i] -> link = 'article.php?id='.$page[$i]['id'];
-    }    
+	error_reporting(0); //for debugging use 'E_ALL'
+    if($xml=simplexml_load_file("content.xml")){
+    	$page = [];
+    	for($i=0; $i<5 && $i< count($xml);$i++){
+			$page[$i] = $xml->article[$i];
+			$page[$i] -> link = 'article?id='.$page[$i]['id'];
+	    } 
+    }else{
+    	//error handling
+    }        
 ?>
 
 
@@ -42,6 +46,7 @@
 		</div>	
 	</header>
 	<section class="main container">
+		<h1>TEST</h1>
 		<?php if(count($page)  == 0) : ?>
 			<p>Sorry, articles can't be loaded now. Please check this blog later.</p>
 		<?php endif;?>
