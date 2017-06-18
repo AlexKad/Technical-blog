@@ -7,6 +7,6 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteCond %{REQUEST_URI} !/$
 # and the request is not for a directory
 
-RewriteRule (.*) $1\\.php [L]
+RewriteRule (.*) $1.php [L]
 # redirect to the php script with the requested filename
 
