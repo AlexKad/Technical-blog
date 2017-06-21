@@ -11,7 +11,7 @@
 	<article id="2">
 		<title>Contact form with PHP mail() and SMTP authentication</title>
 		<createdAt>05/12/2017</createdAt>
-		<keywords>javascript; jQuery; PHP; SMTP; mail; contact form; html; css;</keywords>
+		<keywords>javascript; PHP; SMTP; mail; contact form;</keywords>
 		<description>When you developing web sites in most cases you facing up with necessity to create 'contact us' form. No matter if it is a simple landing page for a small business, portfolio web site or a huge web platform, everyone wants to communicate, leave a feedback, ask question or whatever. Whereas some popular CMS platforms provide developers with different mailing addons, you might need something simple with possibility to customize it. Here is my simple 'contact us' form with HTML and PHP.</description>
 		<src>contactFormWithPhp.html</src>
 	</article>
@@ -19,7 +19,7 @@
 	<article id="3">
 		<title>Sublime and Emmet. Increase your development speed</title>
 		<createdAt>05/22/2017</createdAt>
-		<keywords>sublime; emmet; zen coding; html;css; improve process</keywords>
+		<keywords>sublime; emmet; zen coding; html; improve process</keywords>
 		<description>Today I'm going to tell few words about one of my favorite editors Sublime text. It's very light, easy to use, provides many interesting user settings like changing color schemes or fonts, and the most important - it has plenty of usefull plugins, that helps to improve the speed and quality of the development.</description>
 		<src>sublimeAndEmmet.html</src>
 	</article>

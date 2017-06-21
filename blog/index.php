@@ -35,7 +35,7 @@
 			<div class="container-fluid">			
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="../index.html">About me</a></li>
-					<li><a href="index.html">Blog</a></li>
+					<li><a href="index">Blog</a></li>
 				</ul>
 			</div>							
 		</nav>		
@@ -46,16 +46,16 @@
 		</div>	
 	</header>
 	<section class="main container">
-		<h1>TEST</h1>
 		<?php if(count($page)  == 0) : ?>
 			<p>Sorry, articles can't be loaded now. Please check this blog later.</p>
 		<?php endif;?>
         <?php foreach ( $page as $item ) : ?>
         <div class="article">
-			<a href="<?php print $item->link ?>" class="article-header">
-				<?=$item[0]->title?></a>			
-			<p><?=$item[0]->description?>
-				<a href="<?php print $item->link ?>" class="more">Read more  &gt;&gt;</a>
+			<a href="<?=$item->link ?>" class="article-header">
+				<?=$item->title?></a>	
+			<!-- <div><span> <?=$item->createdAt?> </span>| <span><?=$item->keywords?></span></div>		 -->
+			<p><?=$item->description?>
+				<a href="<?=$item->link ?>" class="more">Read more  &gt;&gt;</a>
 			</p>				
 		</div>
         <?php endforeach; ?>

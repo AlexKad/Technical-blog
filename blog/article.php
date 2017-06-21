@@ -1,17 +1,18 @@
-<?php 
- $xml=simplexml_load_file("content.xml") 
- 	or die("Error: Cannot create object");
-
- $id = $_GET['id']; // parse query param from url
- $keywords = '';
- $src ='';
- $article = $xml->xpath("//article[@id='".$id."']")[0];
- if($article){
- 	$title = $article->title;
- 	$keywords = $article->keywords;
- 	$src = $article->src; 	
- }
-
+<?php
+	error_reporting(0); //for debugging use 'E_ALL' 
+	$keywords = '';
+ 	if($xml=simplexml_load_file("content.xml") ){
+ 		$id = $_GET['id']; // parse query param from url		 
+		$src ='';
+		$article = $xml->xpath("//article[@id='".$id."']")[0];
+		if($article){
+		 	$title = $article->title;
+		 	$keywords = $article->keywords;
+		 	$src = $article->src; 	
+		}
+ 	}else{
+ 		//error handling
+ 	}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 		<nav class="navbar fixed-top" role="navigator">	
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="../index.html">About me</a></li>
-					<li><a href="index.html">Blog</a></li>
+					<li><a href="index">Blog</a></li>
 				</ul>						
 		</nav>		
 
