@@ -20,6 +20,6 @@ $('#back-to-top').click(function (e) {
 });
 
 $('.blog-header').click(function(e) {
-	window.location = 'index.html';
+	window.location = 'index';
 })
         
