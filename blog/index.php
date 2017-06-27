@@ -1,11 +1,15 @@
 <?php
-	error_reporting(0); //for debugging use 'E_ALL'
+    error_reporting(0); //for debugging use 'E_ALL'
     if($xml=simplexml_load_file("content.xml")){
     	$page = [];
     	for($i=0; $i<5 && $i< count($xml);$i++){
-			$page[$i] = $xml->article[$i];
-			$page[$i] -> link = 'article?id='.$page[$i]['id'];
-	    } 
+		$page[$i] = $xml->article[$i];
+		$page[$i] -> link = 'article?id='.$page[$i]['id'];
+	} 
+	function sortFunction( $a, $b ) {
+    		return $a["createdAt"]< $b["createdAt"] ? -1 : 1;
+	}
+	//usort($page, "sortFunction");
     }else{
     	//error handling
     }        
