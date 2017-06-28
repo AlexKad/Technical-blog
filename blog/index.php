@@ -6,6 +6,10 @@
 			$page[$i] = $xml->article[$i];
 			$page[$i] -> link = 'article?id='.$page[$i]['id'];
 	    } 
+	    function sortFunction( $a, $b ) {
+    		return $a["createdAt"]< $b["createdAt"] ? -1 : 1;
+		}
+		usort($page, "sortFunction");
     }else{
     	//error handling
     }        
