@@ -2,7 +2,7 @@
 <root>
 	<article id="1">
 		<title>Javascript bitwise operators and how to use them</title>
-		<createdAt>04/14/17</createdAt>
+		<createdAt>04/14/2017</createdAt>
 		<keywords>javascript; bitwise operators;</keywords>
 		<description>The majority of javascript developers knows about bitwise operators and binary representations of numbers. However if you asked them where in web development we can use those operators you rarely hear a clear answer. So was I until I started to use bitwise operators in one  project where we had to grant and control different user roles on the webportal.</description>
 		<src>bitwiseOpers.html</src>
