@@ -23,4 +23,12 @@
 		<description>Today I'm going to tell few words about one of my favorite editors Sublime text. It's very light, easy to use, provides many interesting user settings like changing color schemes or fonts, and the most important - it has plenty of usefull plugins, that helps to improve the speed and quality of the development.</description>
 		<src>sublimeAndEmmet.html</src>
 	</article>
+
+	<article id="4">
+		<title>Hiring process in Silicon Valley</title>
+		<createdAt>07/24/2017</createdAt>
+		<keywords>hiring; interview; </keywords>
+		<description>Recently I finished my long way to a dream job in America. I have attended lots of interviews in different companies at Silicon valley, so I have enough experience to share with those who are moved here from another countries and not familar with american hiring process.</description>
+		<src>interviews.html</src>
+	</article>
 </root>
