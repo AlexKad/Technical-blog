@@ -17,14 +17,14 @@ html, body{
 	color: #555;
 }
 
-.header{		
+.header{
 	overflow: hidden;
-	background-color: #5e5ea5;	
+	background-color: #5e5ea5;
     color: white;
     letter-spacing: 0.3em;
     font-family: monospace;
     text-transform: uppercase;
-    padding-bottom:40px;  
+    padding-bottom:40px;
 }
 
 .header .navbar{
@@ -56,7 +56,7 @@ html, body{
 	white-space: nowrap;
 	margin: 0 auto;
 	width:17em;
-	animation: 
+	animation:
 	    typing 2.2s steps(18, end),
 	    blinkTextCursor 0.75 steps(18) 5s;
 	animation-delay:1s;
@@ -77,7 +77,7 @@ html, body{
 	color: #fff;
 }
 .viewmore,
-a.viewmore:visited{	
+a.viewmore:visited{
 	font-size: 40px;
 }
 a.viewmore:hover{
@@ -93,7 +93,7 @@ a.viewmore:hover{
 	max-width:750px;
 }
 .article{
-	margin-bottom:50px;	
+	margin-bottom:50px;
 }
 
 .article-header{
@@ -105,7 +105,7 @@ a.viewmore:hover{
 	text-decoration: none;
 }
 
-.article .more{		
+.article .more{
 	color:#5e5ea5;
 	border-bottom: 1px #5e5ea5 dotted;
 	text-decoration: none;
@@ -135,7 +135,7 @@ a.viewmore:hover{
 }
 
 table.example,
-table.roles{	
+table.roles{
 	text-align: center;
 	font-size: 12px;
 	margin: 5px;
@@ -177,7 +177,7 @@ table.roles td{
 
 .btn-top a{
 	color:#FFF;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 
@@ -200,4 +200,22 @@ table.roles td{
     background-color: #4a4a4a;
     color: #d6d6d6;
     text-align: center;
+}
+
+button{
+  outline: none;
+}
+.interview-steps{
+  width:100%;
+}
+
+.interview-steps .block{
+  width:100%;
+  padding:15px;
+  text-align: center;
+}
+
+.interview-steps .block span{
+  width:100px;
+  float: right;
 }

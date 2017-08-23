@@ -6,17 +6,26 @@
 			<p>Hiring process in America differs a lot from the way we have in Russia. It is much longer, it involves much more people and consists of
 			5-7 different steps. From the first phone call from HR till your final offer might pass 3-5 weeks or even longer. The whole process might
 			slightly differ from company to company, but the main steps are usually the same:</p>
+			<div class="interview-steps">
+				<button class="block" data-target="#apply">Send Resume <span>30-150</span></button>
+				<button class="block" data-target="#phone">Phone Call <span>10-15</span></button>
+				<button class="block" data-target="#interview1">1st Interview <span>5-10</span></button>
+				<button class="block" data-target="#challenge">Code Challenge <span>3-5</span></button>
+				<button class="block" data-target="#interview2">2nd Interview <span>1-3</span></button>
+				<button class="block" data-target="#offer">Offer <span>1-2</span></button>
+			</div>
 			 <ol>
-				 <li><h4>Apply for the job</h4>
-				 <p>There are a huge amount of candidates, especially here, in Silicon Valley. You have to polish your resume very carefully, point out you best skills
+				 <li id="apply"><h4>Apply for the job</h4>
+					 <div ></div>
+				 <p >There are a huge amount of candidates, especially here, in Silicon Valley. You have to polish your resume very carefully, point out you best skills
 				 very clearly. The ideal resume consists of 1 page and contains all necessary information about the candidate: full name, contacts, background and most significant achievements.
 			 		Here, in America, it is very important to have a list of recommendations from previous employers, so be prepared in advance and ask your previous
 					managers to provide you with such recommendation letter.</p></li>
-			 	<li><h4>First call or email from HR.</h4>
+			 	<li id="phone"><h4>First call or email from HR.</h4>
 				<p>This is a small call or even email from HR or other company representatives.
 					 The main goal is to check if you are still on the market and to show you that this company is potentially interested in hiring you.
 					 If everything is good, HR will schedule the phone/skype call interview to discuss job position and your background.</p></li>
-				<li><h4>15 minutes phone call with HR or team manager.</h4>
+				<li id="interview1"><h4>15 minutes phone call with HR or team manager.</h4>
 				<p>This is a short phone or skype conversation with HR or team manager. To tell the truth, I have never had such conversation with any HR,
 					it always was some guy from the team: manager or team lead. They usually ask common questions about your background and previous experience.
 					They ask about professional books you've read, workflow process on your previous project, most challenging task you had and very rarely some common
@@ -26,7 +35,7 @@
 					If you feel that you maybe not the right person to fit this job position, don't hesitate to discuss your concerns with the interviewer.
 					Interviewer will appreciate your honesty and even if you decided not to continue, he will keep you as the honest and good candidate for another position.
 				</p></li>
-				<li><h4>Home work challenge</h4>
+				<li id="challenge"><h4>Home work challenge</h4>
 				<p>Usually, after the phone interview, companies send you a small challenge to complete in 1-2 days. Sometimes they prefer to have another online interview
 					 via skype or hangout and code with you sharing your screen. The main goal of this iteration is to demonstrate your interviewers that you able to solve
 					 issues or/and you are familiar with some specific technology or ready to learn fast. In my case, I was asked to implement simple video gallery on React in 1-2 days,
@@ -38,7 +47,7 @@
 					 with different experience, but everyone of them should understand every line of your code. Impress them with clear and smart code. If you want to write comments
 					 somewhere in your code to explain what's going on the line below, it is a good sign that you need to simplify this line of code, rather than comment it.
 				</p></li>
-				<li><h4>On-site interview with team</h4>
+				<li id="interview2"><h4>On-site interview with team</h4>
 				<p>If you receive an invitation to the on-site interview it means that you are really valuable candidate and the company is really serious about you. Congrats!
 					An on-site interview is the most interesting and the most challenging part. It usually takes 4-6 hours (or even the whole day). You arrive at the company office in the morning,
 				  meet your HR and your future team. Interview starts with the small conversation, some behavioral questions, your recommendations (if you bring them) and moving forward to the coding part.
@@ -53,11 +62,19 @@
 					This will give you both clear understanding of can you fit the company goals and can you be valuable the person for the company. For you, it is a great opportunity to understand if you can grow inside the company or
 					how you can improve your skills here. It will be helpful to learn more about the company and prepare some questions in advance. In this conversation, you most likely will discuss your future salary and bonuses. So be prepared to negotiate.</p>
 					</li>
-				<li><h4>Final offer</h4>
+				<li id="offer"><h4>Final offer</h4>
 				<p>Congratulations! You finally did it! It was really long and amazing experience, wasn't? Don't forget to say thank you, check your first working date and another part of your job offer. In case
 				you have several job offers and decide to decline this particular offer, be polite and inform the company about your decision as soon as possible.</p></li>
 			 </ol>
 		</div>
+		<script src="../../assets/vendors/jQuery/jquery-3.1.1.min.js"></script>
+		<script>
+		$('.block').on('click', function(e) {
+			e.preventDefault();
+			var hash = $(this).data('target');
+			$('html, body').animate({ scrollTop: $(hash).offset().top }, 500);
+		});
+		</script>
 		<div id="disqus_thread"></div>
 		<script>
 		var disqus_config = function () {
