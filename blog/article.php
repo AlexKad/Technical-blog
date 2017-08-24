@@ -66,6 +66,6 @@
 		<p>akad.alex@gmail.com</p>
 	</footer>
 	<script src="../../assets/vendors/jQuery/jquery-3.1.1.min.js"></script>
-	<script src="../../assets/custom/js/blog.min.js"></script>
+	<script src="../../assets/custom/js/blog.js"></script>
 </body>
 </html>

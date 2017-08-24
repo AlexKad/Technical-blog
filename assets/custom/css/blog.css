@@ -206,16 +206,22 @@ button{
   outline: none;
 }
 .interview-steps{
-  width:100%;
+  max-width:500px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, rgb(132, 197, 88), rgb(59, 134, 25));
 }
 
-.interview-steps .block{
+.interview-steps .nav-block{
   width:100%;
   padding:15px;
   text-align: center;
+  color:#fff;
+  border: 1px solid whitesmoke;
+  background: transparent;
 }
 
-.interview-steps .block span{
-  width:100px;
+.interview-steps .nav-block span{
+  width:150px;
   float: right;
+  text-align: right;
 }

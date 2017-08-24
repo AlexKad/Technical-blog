@@ -7,12 +7,12 @@
 			5-7 different steps. From the first phone call from HR till your final offer might pass 3-5 weeks or even longer. The whole process might
 			slightly differ from company to company, but the main steps are usually the same:</p>
 			<div class="interview-steps">
-				<button class="block" data-target="#apply">Send Resume <span>30-150</span></button>
-				<button class="block" data-target="#phone">Phone Call <span>10-15</span></button>
-				<button class="block" data-target="#interview1">1st Interview <span>5-10</span></button>
-				<button class="block" data-target="#challenge">Code Challenge <span>3-5</span></button>
-				<button class="block" data-target="#interview2">2nd Interview <span>1-3</span></button>
-				<button class="block" data-target="#offer">Offer <span>1-2</span></button>
+				<button class="nav-block" data-target="#apply">Send Resume <span>30-150 appl.</span></button>
+				<button class="nav-block" data-target="#phone">Phone Call <span>10-15 appl.</span></button>
+				<button class="nav-block" data-target="#interview1">1st Interview <span>5-10 appl.</span></button>
+				<button class="nav-block" data-target="#challenge">Code Challenge <span>3-5 appl.</span></button>
+				<button class="nav-block" data-target="#interview2">2nd Interview <span>1-3 appl.</span></button>
+				<button class="nav-block" data-target="#offer">Offer <span>1-2 appl.</span></button>
 			</div>
 			 <ol>
 				 <li id="apply"><h4>Apply for the job</h4>
@@ -67,14 +67,6 @@
 				you have several job offers and decide to decline this particular offer, be polite and inform the company about your decision as soon as possible.</p></li>
 			 </ol>
 		</div>
-		<script src="../../assets/vendors/jQuery/jquery-3.1.1.min.js"></script>
-		<script>
-		$('.block').on('click', function(e) {
-			e.preventDefault();
-			var hash = $(this).data('target');
-			$('html, body').animate({ scrollTop: $(hash).offset().top }, 500);
-		});
-		</script>
 		<div id="disqus_thread"></div>
 		<script>
 		var disqus_config = function () {
