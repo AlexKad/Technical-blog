@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="../../assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/vendors/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../../assets/vendors/fontawesome/css/bootstrap-social.css">
-	<link rel="stylesheet" href="../../assets/custom/css/blog.css">
+	<link rel="stylesheet" href="../../assets/custom/css/blog.min.css?v=1.9">
 
 </head>
 <body>
@@ -66,6 +66,6 @@
 		<p>akad.alex@gmail.com</p>
 	</footer>
 	<script src="../../assets/vendors/jQuery/jquery-3.1.1.min.js"></script>
-	<script src="../../assets/custom/js/blog.js"></script>
+	<script src="../../assets/custom/js/blog.min.js"></script>
 </body>
 </html>

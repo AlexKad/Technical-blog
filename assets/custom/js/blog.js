@@ -21,7 +21,7 @@ $('#back-to-top').click(function (e) {
 
 $('.blog-header').click(function(e) {
 	window.location = 'index';
-});
+}); 
 
 $('.nav-block').on('click', function(e) {
   e.preventDefault();
