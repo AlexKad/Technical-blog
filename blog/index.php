@@ -1,6 +1,6 @@
 <?php
     error_reporting(0); //for debugging use 'E_ALL'
-    if($xml=simplexml_load_file("content1.xml")){
+    if($xml=simplexml_load_file("content.xml")){
     	$page = [];
     	for($i=0; $i<5 && $i< count($xml);$i++){
 			$page[$i] = $xml->article[$i];

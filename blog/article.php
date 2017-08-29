@@ -1,7 +1,7 @@
 <?php
 	error_reporting(0); //for debugging use 'E_ALL'
 	$keywords = '';
- 	if($xml=simplexml_load_file("content1.xml") ){
+ 	if($xml=simplexml_load_file("content.xml") ){
  		$id = $_GET['id']; // parse query param from url
 		$src ='';
 		$article = $xml->xpath("//article[@id='".$id."']")[0];
