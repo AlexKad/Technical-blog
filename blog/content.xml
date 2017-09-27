@@ -32,4 +32,12 @@
 		so I have enough experience to share with those who are moved here from another country and not familiar with the american hiring process.</description>
 		<src>interviews.html</src>
 	</article>
+
+	<article id="5">
+		<title>Implement google cloud functions with Firebase</title>
+		<createdAt>09/06/2017</createdAt>
+		<keywords>google cloud; firebase; </keywords>
+		<description> </description>
+		<src>cloudFunc.html</src>
+	</article>
 </root>
