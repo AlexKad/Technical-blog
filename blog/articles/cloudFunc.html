@@ -1,11 +1,64 @@
 <section class="main container">
 	<div class="article">
 		<h2>Implement google cloud functions with Firebase</h2>
+		<p>Recently I was setting up Firebase for one application that works with gcloud functions. It was pretty fun experience because
+			though it was quite simple, I still faced up with some not obvious issues and had to google solutions.
+			The main goal of this article is to keep possible issues and working solutions for this issues in one place.</p>
+			<ol>
+				<li>
+					<h4>Create new project in google cloud.</h4>
+					<p>Go to <a href="https://console.cloud.google.com/" target="_blank">google cloud platform console</a>
+					and create new project. </p>
+				</li>
+				<li>
+					<h4>Add bucket.</h4>
+					<p>Go to <a href="https://console.cloud.google.com/storage" target="_blank">cloud storage browser</a> and create bucket. Find more information
+					<a href="https://cloud.google.com/storage/docs/creating-buckets" target="_blank">here</a>.</p>
+				</li>
+				<li>
+					<h4>Setup firebase</h4>
+					<p>Login into <a href="https://firebase.google.com/" target="_blank">firebase</a>. Go to firebase console, import your google project.</p>
+				</li>
+				<li>
+					<h4>Install firebase locally</h4>
+					<p>If you use node install <a href="https://www.npmjs.com/package/firebase" target="_blank">firebase package</a> in the root folder of your application. Run in console <code>$ npm install firebase</code>.</p>
+					<p>Note if you need Firebase Storage you have to install gcloud Node.js client <code>$ npm install --save gcloud</code>.</p>
+				</li>
+				<li>
+					<h4>Init gcloud functions on the local machine.</h4>
+					<p>Run <code>firebse init functions</code> in console from root project directory to init Cloud Functions. Firebase will provide you with a list of your google projects and
+						 will ask you to select the default project for the current directory. Select one of the existing project or create one On the next step allo to set up all dependencies.
+					 after this instalation on your project directory you will see new folder 'functions', firebase.json file and .firebaserc file with your default project settings. </p>
+					 <img src="assets/gcloud_proj.png" alt="project structure">
+				</li>
+				<li>
+					<h4>Edit firebase.json</h4>
+					<p>Add <code>"hosting: { "public": "name of your folder with index.html" }"</code></p>
+				</li>
+				<li>
+					<h4>Run firebase deploy from local console</h4>
+					<p>This will deploy your application on Firebase.</p>
+				</li>
+
+				<li>
+					<h4>Create functions</h4>
+					<p>Write functions inside newely created functions/index.js file.</p>
+				</li>
+				<li>
+					<h4>Solve 'cors' problems</h4>
+					<p>Install 'cors' lib.</p>
+				</li>
+				<li>
+					<h4>Deploy gcloud functions</h4>
+					<p>Run <code>firebase deploy -only functions</code> in console to deploy gcloud functions.</p>
+				</li>
+			</ol>
 	</div>
+
   <script>
 	disqus_config = function () {
 		this.page.url = 'http://aleksandraweb.com/blog/cloudFunc.php';
-		this.page.identifier = 'article_bitwiseopers';
+		this.page.identifier = 'cloudFunc';
 	};
 
 	(function() { // DON'T EDIT BELOW THIS LINE
