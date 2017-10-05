@@ -37,7 +37,9 @@
 		<title>Implement google cloud functions with Firebase</title>
 		<createdAt>09/06/2017</createdAt>
 		<keywords>google cloud; firebase; </keywords>
-		<description> </description>
+		<description>I've been playing with Google Cloud Functions for a couple of weeks and actually host
+			one working business web application on the Firebase. While I found gcloud functions easy to write and deploy, there is still no clean and short tutorial on how
+			you can create and start using cloud functions. Below is a short tutorial with some upcoming issues and fixes. </description>
 		<src>cloudFunc.html</src>
 	</article>
 </root>
