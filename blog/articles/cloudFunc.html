@@ -2,42 +2,42 @@
 	<div class="article">
 		<h2>Implement google cloud functions with Firebase</h2>
 		<p>I've been playing with <a href="https://cloud.google.com/functions/" target="_blank">Google Cloud Functions</a> for a couple of weeks and actually host
-			one working business web application on the Firebase. While I found gcloud functions easy to write and deploy, there is still no clean and short tutorial of how
-			you can create and start using cloud functions. Below is short tutorial with some upcoming issues and fixes.
+			one working business web application on the Firebase. While I found gcloud functions easy to write and deploy, there is still no clean and short tutorial on how
+			you can create and start using cloud functions. Below is a short tutorial with some upcoming issues and fixes.
 			<ol>
 				<li>
-					<h4>Create new project in google cloud.</h4>
-					<p>Go to <a href="https://console.cloud.google.com/" target="_blank">google cloud platform console</a> and create new project. You don't need to setup bucket or change any settings
+					<h4>Create a new project in google cloud.</h4>
+					<p>Go to <a href="https://console.cloud.google.com/" target="_blank">google cloud platform console</a> and create a new project. You don't need to setup bucket or change any settings
 					to start using cloud functions. But you need google project to set as a default project when you will initialize Firebase.</p>
 				</li>
 				<li>
 					<h4>Setup firebase</h4>
-					<p>Login into <a href="https://firebase.google.com/" target="_blank">firebase</a>. Go to firebase console, import your google project.</p>
+					<p>Login to <a href="https://firebase.google.com/" target="_blank">firebase</a>. Go to firebase console, import your google project.</p>
 				</li>
 				<li>
 					<h4>Install firebase locally</h4>
 					<p>Install <a href="https://www.npmjs.com/package/firebase" target="_blank">firebase package</a> in the root folder of your application. Run in console</p>
 					<pre><code>$ npm install firebase</code></pre>
-					<p><u>Note</u> if you need Firebase Storage you have to install gcloud Node.js client</p>
+					<p><u>Note</u> if you need Firebase Storage you have to install gcloud Node.js client separatly</p>
 					<pre><code>$ npm install --save gcloud</code></pre>
 				</li>
 				<li>
 					<h4>Init gcloud functions on the local machine.</h4>
 					<p>Run <code>firebse init functions</code> in console from root project directory. Firebase will provide you with a list of your google projects and
 						 will ask you to select the default project for the current directory. Select one of the existing project or create one. On the next step allow to set up all dependencies.
-					   After this instalation on your project directory you will see new folder 'functions', firebase.json file and .firebaserc file with your default project settings. </p>
+					   After this installation on your project directory, you will see new folder 'functions', firebase.json file and .firebaserc file with your default project settings. </p>
 					 <img src="assets/gcloud_proj.png" alt="project structure">
 				</li>
 				<li>
 					<h4>Edit firebase.json</h4>
-					<p>Define path to the index.html (or any other main page of your project). Usually it is 'public' folder or root directory. Add </p>
+					<p>Define a path to the index.html (or any other main page of your project). Usually, it is 'public' folder or root directory. Add </p>
 						<pre><code>"hosting": {
    "public": "name of your folder with index.html"
 }</code></pre>
 				</li>
 				<li>
 					<h4>Create functions</h4>
-					<p>Write functions inside newely created functions/index.js file.</p>
+					<p>Write functions inside newly created functions/index.js file.</p>
 				</li>
 			<li>
 				<h4>Run firebase deploy from local console</h4>
@@ -48,12 +48,12 @@
 			</li>
 				<li>
 					<h4>Solve 'cors' problems</h4>
-					<p>When you will try to call newly created function from client side, you will probably recieve the following error:</p>
+					<p>When you will try to call the newly created function from the client side, you will probably receive the following error:</p>
 					<p><code>No 'Access-Control-Allow-Origin' header is present on the requested resource.</code></p>
 					<p>When your web browser is calling a web service that is in a different domain (in our case https://us-central1-cloud-functions ),
 						it doesn’t make a GET or POST HTTP request right away, it rather starts with making an OPTIONS request, and compares the value of
 						Access-Control-Allow-Origin header in the result with the current domain. When the header value matches the host,
-						the browser goes on and the actual call is being made. Otherwise the action is stopped and the error similar to the one above is thrown.
+						the browser goes on and the actual call is being made. Otherwise, the action is stopped and the error similar to the one above is thrown.
 					  The mechanism is called Cross-Origin Resource Sharing (CORS).</p>
 					<p>To solve this, you can use <a href="https://www.npmjs.com/package/cors" target="_blank">CORS package</a>. Install it inside 'functions' folder (it has its own package.json and node_modules)</p>
 					<pre><code>&nbsp;$ cd functions
