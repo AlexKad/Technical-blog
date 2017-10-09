@@ -10,3 +10,5 @@ RewriteCond %{REQUEST_URI} !/$
 RewriteRule (.*) $1.php [L]
 # redirect to the php script with the requested filename
 
+DirectoryIndex "index.html index.php"
+#default index page
