@@ -2,9 +2,9 @@
     error_reporting(0); //for debugging use 'E_ALL'
     if($xml=simplexml_load_file("content.xml")){
     	$page = [];
-    	for($i=0; $i<5 && $i< count($xml);$i++){
-			$page[$i] = $xml->article[$i];
-			$page[$i] -> link = 'article?id='.$page[$i]['id'];
+    	for($i=0;  $i< count($xml);$i++){
+			     $page[$i] = $xml->article[$i];
+			     $page[$i] -> link = 'article?id='.$page[$i]['id'];
 	    }
 	    function sortFunction( $a, $b ) {
     		return $a["createdAt"]< $b["createdAt"] ? 1 : -1;
@@ -55,13 +55,12 @@
 		<?php endif;?>
         <?php foreach ( $page as $item ) : ?>
         <div class="article">
-			<a href="<?=$item->link ?>" class="article-header">
-				<?=$item->title?></a>
-			<!-- <div><span> <?=$item->createdAt?> </span>| <span><?=$item->keywords?></span></div>		 -->
-			<p><?=$item->description?>
-				<a href="<?=$item->link ?>" class="more">Read more  &gt;&gt;</a>
-			</p>
-		</div>
+    			<a href="<?=$item->link ?>" class="article-header"><?=$item->title?></a>
+    			<!-- <div><span> <?=$item->createdAt?> </span>| <span><?=$item->keywords?></span></div>		 -->
+    			<p><?=$item->description?>
+    				<a href="<?=$item->link ?>" class="more">Read more  &gt;&gt;</a>
+    			</p>
+    		</div>
         <?php endforeach; ?>
 	</section>
 	<footer class="footer">

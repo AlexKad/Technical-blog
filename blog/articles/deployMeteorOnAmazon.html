@@ -1,0 +1,180 @@
+<section class="main container">
+	<div class="article">
+		<h2>Deploy Meteor app on AWS from scratch</h2>
+		<p>Meteor a platform for building web apps on pure JS becomes more and more popular.
+      I spent some time deploying my recent Meteor project on AWS and I found this
+      experience a little confusing and time-consuming. So here is a steps to set up
+      everything from scratch. Hope this manual will help to save time and to
+      avoid most common issues.</p>
+    <p>I use AWS EC2 with Linux Fedora.</p>
+
+  <ol>
+    <li>
+      <h4>SSH to your remote instance</h4>
+    </li>
+    <li>
+      <h4>Copy your project to a server</h4>
+      <p>My project was on github, so I generated SSH key on my instance and added this key to gitHub settings.</p>
+      <p><code>$ ssh-keygen</code> to generate SSH key</p>
+      <p><code>$ cat /home/ec2-user/.ssh/id_rsa.pub</code> copy key and add to the github settings</p>
+      <p><code>$ git clone git@github.com:project_name.git</code> clone git project </p>
+    </li>
+    <li>
+      <h4>Install Meteor</h4>
+      <p>Use a simple curl command, as explained on the
+        <a href='https://www.meteor.com/install' target='_blank'>official Meteor site:</a> <br/>
+        <code>$ curl https://install.meteor.com/ | sh</code>
+      </p>
+    </li>
+    <li>
+      <h4>Install Node</h4>
+      <p>Node.js is available from the NodeSource Enterprise Linux and Fedora binary distributions repository.</p>
+      <code>$ curl -sL https://deb.nodesource.com/setup_0.10 | sudo -E bash -</code> <br/>
+      <code>$ sudo yum -y install nodejs</code> install package
+    </li>
+
+    <li>
+      <h4>Setup mongoDB</h4>
+      <p>It is not necessary step because Meteor will automatically install and run its own instance of MongoDB.
+        However in my case I want to run separate independent from Meteor instance.
+        Install MongoDb (3.6 in my case) and create new database for the project.</p>
+      <ul>
+        <li>
+          <p>Create a repo file so you can install MongoDB using yum.</p>
+          <code>$ touch /etc/yum.repos.d/mongodb-org-3.6.repo</code>
+          <p>Copy paste the folowing content:</p>
+          <pre><code>[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+</code></pre>
+        <li><code>$ sudo yum install -y mongodb-org</code> to install packages</li>
+        <li><code>$ sudo mkdir -p /data/db/</code> create directory for data </li>
+        <li><code>$ sudo chown `id -u` /data/db</code> set directory permissions </li>
+        <li><code>$ sudo mongod</code> run mongo to check that everything works correct</li>
+        <li><code>$ mongod --storageEngine inMemory</code> run mongo in memory</li>
+        <li><code>$ use database_name</code> create new database
+           <i>Note: need to create new collection and insert at least 1 document. </i></li>
+        <li><code>export MONGO_URL=mongodb://localhost:27017/your_db</code>
+          Force Meteor to use database that was created on the previous step.
+          Change directory to the folder that contains Meteor project and export MONGO_URL
+       </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Install nginx server</h4>
+      I use Nginx to route incoming requests to port 80 and 443 to Meteor port (by default 3000).
+      <ul>
+        <li>In the home directory of the server create nginx_signing.key file with content from
+          <a href="http://nginx.org/en/linux_packages.html#stable" target="_blanc">nginx docs</a>.
+           To verify the signing key use <br/>
+           <code>$ sudo apt-key add nginx_signing.key</code> You should see an OK response.
+        </li>
+        <li> <code>$ sudo yum install nginx</code> install nginx</li>
+      </ul>
+    </li>
+    <li>
+      <h4>Configure nginx to process incoming requests.</h4>
+      <ul>
+        <li>Go to nginx directory. <code>$ cd /etc/ngnix</code></li>
+        <li>Check all available files (<i><b>ls</b></i>) and add 2 directories <br/>
+          <code>$ mkdir sites-available</code> <br/>
+          <code>$ mkdir sites-enabled</code>
+        </li>
+        <li>In folder 'sites-available' create new file 'app' or update existing one
+           with the following content
+           <pre><code># this section is needed to proxy web-socket connections
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+
+# HTTP
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server ipv6only=on;
+
+  location = /favicon.ico {
+      root /home/USERNAME/portal/programs/web.browser/app;
+      access_log off;
+  }
+
+  location ~* "^/[a-z0-9]{40}\.(css|js)$" {
+    gzip_static on;
+    root /home/USERNAME/portal/programs/web.browser;
+    access_log off;
+  }
+
+  location ~ "^/packages" {
+    root /home/USERNAME/portal/programs/web.browser;
+    access_log off;
+  }
+
+  # pass requests to Meteor
+  location / {
+      proxy_pass http://127.0.0.1:3000;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade; #for websockets
+      proxy_set_header Connection $connection_upgrade;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_set_header Host $host;
+  }
+}</code></pre>
+         </li>
+        <li>
+          <code>$ sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/app</code>
+          create a symbolic link to a file with the same name in “sites/enabled”.
+        </li>
+        <li>
+          Add reference to the site-enabled file to the bottom of the /etc/nginx/nginx.conf
+          file to include your changes:<br/>
+          <code>include /etc/nginx/sites-enabled/*;</code>
+        </li>
+        <li>
+          To test the config <br/>
+          <code>$ sudo nginx -t</code><br/>
+          You should see<br/>
+          <code>$ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</code><br/>
+          <code>$ nginx: configuration file /etc/nginx/nginx.conf test is successful</code><br/>
+          Then restart nginx<br/>
+          <code>sudo service nginx restart</code>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h4>Run Meteor</h4>
+      Go to your project branch and run Meteor. Some developers prefer to use tools like
+      <a target="_blank" href='sudo service nginx restart'>forever</a> to run programms in the background.
+      I personally prefer to use screens.
+    </li>
+  </ol>
+  <p><i>Note: if your application runs on the server but it is not accessible
+    through public IP you may consider taking a look at AWS
+    <a  target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> security groups</a>
+   and load balancers.</i></p>
+</p>
+
+
+	</div>
+	<div id="disqus_thread"></div>
+	<script>
+	disqus_config = function () {
+		this.page.url = 'http://aleksandraweb.com/blog/deployMetorOnAmazon.php';
+		this.page.identifier = 'deployMetorOnAmazon';
+	};
+
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+	s.src = 'https://blogtalk-1.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+
+</section>
