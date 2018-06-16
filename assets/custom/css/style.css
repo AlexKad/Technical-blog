@@ -48,6 +48,10 @@ html, body{
 	    blinkTextCursor 0.75 steps(14) 4s;
 }
 
+.header-error{
+	
+}
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0;  }
