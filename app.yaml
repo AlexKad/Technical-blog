@@ -4,9 +4,6 @@ threadsafe: true
 
 
 handlers:
-
-# Handle the main page by serving the index page.
-
 - url: /assets
   static_dir: assets
   
@@ -18,9 +15,6 @@ handlers:
   
 - url: /blog/img
   static_dir: /blog/img
-  
-#- url: /blog/assets/gifs
-#  static_dir: /blog/assets/gifs 
   
 - url: /blog/index(.*)?
   script: /blog/index.php
