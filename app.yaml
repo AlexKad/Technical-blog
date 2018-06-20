@@ -1,0 +1,45 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+
+handlers:
+
+# Handle the main page by serving the index page.
+
+- url: /assets
+  static_dir: assets
+  
+- url: /assets/custom/img
+  static_dir: /assets/custom/img
+  
+- url: /blog/articles
+  static_dir: /blog/articles  
+  
+- url: /blog/img
+  static_dir: /blog/img
+  
+#- url: /blog/assets/gifs
+#  static_dir: /blog/assets/gifs 
+  
+- url: /blog/index(.*)?
+  script: /blog/index.php
+  
+- url: /blog/article(.*)?
+  script: /blog/article.php
+  
+- url: /blog/(.*)?
+  script: /blog/index.php  
+  
+  
+    
+  
+- url: (.*)?
+  static_files: index.html
+  upload: index.html
+  
+  
+
+
+
+

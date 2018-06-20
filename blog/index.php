@@ -38,7 +38,7 @@
 		<nav class="navbar" role="navigator">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="../index.html">About me</a></li>
+					<li class="active"><a href="../index">About me</a></li>
 					<li><a href="index">Blog</a></li>
 				</ul>
 			</div>
