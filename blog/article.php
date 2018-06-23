@@ -35,14 +35,16 @@
 </head>
 <body>
 	<header class="header">
-		<nav class="navbar fixed-top" role="navigator">
+		<nav class="navbar" role="navigator">
+			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="../index.html">About me</a></li>
+					<li class="active"><a href="../index">About me</a></li>
 					<li><a href="index">Blog</a></li>
 				</ul>
+			</div>
 		</nav>
 
-		<div class="container text-center blog-header">
+		<div class="container text-center">
 			<h1>All about Web</h1>
 			<h4 class="typing">Javascript, HTML, CSS</h4>
 		</div>
