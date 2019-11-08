@@ -48,10 +48,6 @@ html, body{
 	    blinkTextCursor 0.75 steps(14) 4s;
 }
 
-.header-error{
-	
-}
-
 /* The typing effect */
 @keyframes typing {
   from { width: 0;  }
@@ -106,7 +102,7 @@ a.viewmore:hover{
 
 .about{
 	background: #FFF;
-    color: #666;
+    color: #3e3e3e;
 }
 
 .img-bck{
@@ -139,7 +135,6 @@ ul.skillset{
 .custom-progressbar {
 	background-color: #e6e6e6;
   	border-radius: 2px;
-  	/*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
   	height: 20px;
   	width: calc(100% - 150px);
   	margin-left: 10px;
@@ -152,15 +147,6 @@ ul.skillset{
 	background-color: #4CAF50;
 	background: linear-gradient(to right, #81ce84, #4CAF50);
 	height: 20px;
-	transform: translateX(-100%);
-	transition: all 1.7s;
-	-webkit-backface-visibility: hidden;
-}
-
-.about.active .progress-value,
-.skills.active .progress-value{
-	transform: translateX(0%);
-	-webkit-backface-visibility: hidden;
 }
 
 ul.statements{
@@ -218,11 +204,6 @@ ul.statements .highlighted{
 	border-bottom:0px;
   margin: 0 auto;
   padding:10px;
-  opacity: 0;
-	transition: all .5s;
-	-webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
 	color: whitesmoke;
 	font-weight: 200;
 	letter-spacing: 1px;
@@ -281,15 +262,6 @@ ul.statements .highlighted{
 .experience  .step:nth-child(even){
 	transform: translateX(-50%) scale(0.8);
 }
-
-.experience.active .step{
-	opacity: 1;
-	transform: translateX(0) scale(1);
-	-webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-}
-
 
 .btn-top{
 	border:1px solid #ddd;

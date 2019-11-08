@@ -8,31 +8,30 @@
  			 function(){ $(hash).addClass('active'); });
  });
 
- function activateScrollSection(){
- 	const scrollPos = window.scrollY;
- 	const sections = document.querySelectorAll('section');
-	$('.active').removeClass('active');
-
-	if ($(this).scrollTop() > window.innerHeight/1.3) {
-        $('#back-to-top').fadeIn();
-    } else {
-        $('#back-to-top').fadeOut();
-    }
-
- 	sections.forEach(section => {
- 		if(section.offsetTop <= scrollPos + window.innerHeight/1.3){
- 			$(section).addClass('active');
- 		}
- 		else{
- 			$(section).removeClass('active');
- 		}
- 	}); 	
- }       
-
 $('#back-to-top').click(function (e) {
     $('body,html').animate({ scrollTop: 0 }, window.innerHeight);
     $('#back-to-top').fadeOut();
     return false;
 });
 
- window.addEventListener('scroll', activateScrollSection)
+  window.sr = ScrollReveal();
+  sr.reveal('.progress-value', {
+    delay: 100,
+    duration: 1000,
+    origin: 'left',
+    distance: '100%',
+    easing: 'ease-out'
+  });
+
+  let step = {
+    delay: 100,
+    duration: 1000,
+    distance: '100%',
+    easing: 'ease-out'
+  };
+
+  sr.reveal('.step-1', {...step, origin: 'right'});
+  sr.reveal('.step-2', {...step, origin: 'left'});
+  sr.reveal('.step-3', {...step, origin: 'right'});
+  sr.reveal('.step-4', {...step, origin: 'left'});
+  sr.reveal('.step-5', {...step, origin: 'right'});
