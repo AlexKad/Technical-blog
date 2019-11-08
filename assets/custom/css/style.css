@@ -213,6 +213,7 @@ ul.statements .highlighted{
 	border-bottom: 2px solid #ddd;
 }
 
+.experience .step.step-6{ background: rgba(52, 175, 132, 1)}
 .experience .step.step-5{ background: rgba(52, 175, 171, 1)}
 .experience .step.step-4{ background: rgba(34, 148, 178, .9)}
 .experience .step.step-3{ background: rgba(31, 113, 162, .9)}

@@ -35,3 +35,4 @@ $('#back-to-top').click(function (e) {
   sr.reveal('.step-3', {...step, origin: 'right'});
   sr.reveal('.step-4', {...step, origin: 'left'});
   sr.reveal('.step-5', {...step, origin: 'right'});
+  sr.reveal('.step-6', {...step, origin: 'left'});
