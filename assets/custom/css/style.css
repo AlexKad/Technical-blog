@@ -6,10 +6,10 @@ html, body{
 	height:100vh;
 	overflow: hidden;
 	background-color: #5e5ea5;
-    color: white;
-    letter-spacing: 0.3em;
-    font-family: monospace;
-    text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.3em;
+  font-family: monospace;
+  text-transform: uppercase;
 }
 
 .header .navbar a{
@@ -38,7 +38,7 @@ html, body{
 
 .header .typing{
 	font-size: 20px;
-    margin-top: 10px;
+  margin-top: 10px;
 	overflow: hidden;
 	white-space: nowrap;
 	margin: 0 auto;
@@ -92,17 +92,29 @@ a.viewmore:hover{
 .experience,
 .contact{
 	padding-top:20px;
-	min-height: 100vh;
-    font-size: 1.9rem;
+	/* min-height: 100vh; */
+  font-size: 1.2rem;
 }
 
 .next-btn{
 	margin-top:40px;
 }
 
+.header{
+	width:100%;
+}
+
 .about{
 	background: #FFF;
-    color: #3e3e3e;
+	z-index: -1;
+  color: #3e3e3e;
+	/* position: fixed;
+	top:0;
+	left:0;
+	width: 100%; */
+}
+.about-window{
+	min-height: 100vh;
 }
 
 .img-bck{
@@ -165,7 +177,7 @@ ul.statements{
   margin-right: 10px;
 }
 ul.statements .highlighted{
-	font-size: 2.2rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color:#33458c;
 }
@@ -203,10 +215,9 @@ ul.statements .highlighted{
   border:2px solid #ddd;
 	border-bottom:0px;
   margin: 0 auto;
-  padding:10px;
 	color: whitesmoke;
 	font-weight: 200;
-	letter-spacing: 1px;
+	letter-spacing: 0.3px;
 }
 
 .experience .step:last-child{
@@ -220,48 +231,35 @@ ul.statements .highlighted{
 .experience .step.step-2{ background: rgba(29, 82, 147, .9)}
 .experience .step.step-1{ background: rgba(39, 58, 140, .9)}
 
-.experience .step button{
-	border:none;
+.experience .step>div{
+	padding:10px;
+	/* border:none;
 	border-radius: 5px;
 	background-color: transparent;
 	padding:5px;
 	margin:0;
 	outline:none;
 	margin-bottom: 2px;
-	font-weight: 300;
-	letter-spacing: 1.2px;
-}
-.step.step1 p{
-	font-weight: 300;
-	letter-spacing: 1.2px;
+	color: whitesmoke;
+	font-weight: 300; */
 }
 
-.experience .step button:hover{
-	border: 1px solid #ddd;
-	margin-bottom:0px;
+.experience .step>div:hover{
+	transform: scale(1.1);
 }
 
 .experience .step .description{
 	border-top: 2px solid #ddd;
-	padding-top:10px;
+	padding:10px;
 	margin-top: 10px;
 	text-align: left;
-	letter-spacing: 1.2px;
 	line-height: 30px;
 }
 
 .experience .step .description a{
 	color: whitesmoke;
 	font-weight: 100;
-	letter-spacing: 1px;
 	text-decoration: underline;
-}
-
-.experience  .step:nth-child(odd){
-	transform: translateX(50%) scale(0.8);
-}
-.experience  .step:nth-child(even){
-	transform: translateX(-50%) scale(0.8);
 }
 
 .btn-top{
@@ -287,7 +285,6 @@ ul.statements .highlighted{
 	text-decoration: none;
 }
 .footer{
-	height: 80px;
     clear: both;
     padding: 15px;
     width: 100%;
