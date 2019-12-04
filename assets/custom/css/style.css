@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../vendors/Open_Sans/OpenSans-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../vendors/Open_Sans/OpenSans-Regular.ttf');
+    font-weight: 400;
+}
+
 html, body{
 	margin: 0;
 }
@@ -92,7 +103,7 @@ a.viewmore:hover{
 .experience,
 .contact{
 	padding-top:20px;
-	/* min-height: 100vh; */
+	min-height: 100vh;
   font-size: 1.2rem;
 }
 
@@ -218,6 +229,7 @@ ul.statements .highlighted{
 	color: whitesmoke;
 	font-weight: 200;
 	letter-spacing: 0.3px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .experience .step:last-child{
@@ -233,15 +245,7 @@ ul.statements .highlighted{
 
 .experience .step>div{
 	padding:10px;
-	/* border:none;
-	border-radius: 5px;
-	background-color: transparent;
-	padding:5px;
-	margin:0;
-	outline:none;
-	margin-bottom: 2px;
-	color: whitesmoke;
-	font-weight: 300; */
+	font-family: 'Open Sans', sans-serif;
 }
 
 .experience .step>div:hover{
@@ -254,6 +258,7 @@ ul.statements .highlighted{
 	margin-top: 10px;
 	text-align: left;
 	line-height: 30px;
+	font-family: inherit;
 }
 
 .experience .step .description a{

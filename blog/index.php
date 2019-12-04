@@ -31,13 +31,13 @@
 	<link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/vendors/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/vendors/fontawesome/css/bootstrap-social.css">
-	<link rel="stylesheet" href="../assets/custom/css/blog.min.css?v=1">
+	<link rel="stylesheet" href="../assets/custom/css/blog.min.css?v=1.2">
 </head>
 <body>
 	<header class="header">
 		<nav class="navbar" role="navigator">
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav ml-auto pt-3">
 					<li class="active"><a href="../index">About me</a></li>
 					<li><a href="index">Blog</a></li>
 				</ul>

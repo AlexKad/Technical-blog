@@ -16,15 +16,23 @@ html, body{
 	font-family: 'Open Sans', sans-serif;
 	color: #555;
 }
+a{
+  color: #337ab7;
+  text-decoration: none;
+}
+a:focus,
+a:hover{
+  color: #23527c;
+}
 
 .header{
 	overflow: hidden;
 	background-color: #5e5ea5;
-    color: white;
-    letter-spacing: 0.3em;
-    font-family: monospace;
-    text-transform: uppercase;
-    padding-bottom:40px;
+  color: white;
+  letter-spacing: 0.3em;
+  font-family: monospace;
+  text-transform: uppercase;
+  padding-bottom:40px;
 }
 
 .header .navbar{
@@ -97,12 +105,13 @@ a.viewmore:hover{
 }
 
 .article-header{
-	font-size: 2.8rem;
+	font-size: 1.7rem;
 	font-weight: 400;
 	color:#333;
 }
-.article-header:hover{
+a.article-header:hover{
 	text-decoration: none;
+  color: #23527c;
 }
 
 .article .more{
@@ -193,13 +202,12 @@ table.roles td{
 
 
 .footer{
-	height: 80px;
-    clear: both;
-    padding: 15px;
-    width: 100%;
-    background-color: #4a4a4a;
-    color: #d6d6d6;
-    text-align: center;
+  clear: both;
+  padding: 15px;
+  width: 100%;
+  background-color: #4a4a4a;
+  color: #d6d6d6;
+  text-align: center;
 }
 
 button{
