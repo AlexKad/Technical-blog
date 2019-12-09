@@ -103,10 +103,12 @@ a.viewmore:hover{
 .experience,
 .contact{
 	padding-top:20px;
-	min-height: 100vh;
   font-size: 1.2rem;
 }
-
+.about,
+.experience{
+	min-height: 100vh;
+}
 .next-btn{
 	margin-top:40px;
 }
@@ -200,6 +202,10 @@ ul.statements .highlighted{
 }
 .resume-links a{
 	color:#33458c;
+}
+
+.projects .block a:hover img{
+	transform: scale(1.1);
 }
 .experience{
 	background: #F6F6F6;
