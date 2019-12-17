@@ -1,0 +1,48 @@
+<section class="main container">
+	<div class="article">
+		<h2></h2>
+
+
+    <h3>How to create global gitignore</h3>
+    <div>
+
+      <ol>
+        <li>
+          <p>Set the path of the global gitignore file to ~/.gitignore_global. <br/>
+            <code>git config --global core.excludesfile ~/.gitignore</code>
+          </p>
+
+          <p>In terms of implementation, that command adds the following entry<br/>
+          <code>excludesfile = ~/.gitignore_global</code></p>
+
+          <p>You can find the file location by running this command in Terminal:<br/>
+            <code>git config --get core.excludesfile</code></p>
+        </li>
+        <li>
+          <code>cd ~/</code>
+        </li>
+        <li>
+          <code>touch .gitignore_global</code>
+        </li>
+        <li>
+          <code>open -a TextEdit .gitignore_global</code>
+
+          <p>Most common files to ignore:
+          <pre><code># Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache</code></pre>
+          </p>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>

@@ -54,4 +54,12 @@
       avoid most common issues. </description>
 		<src>deployMeteorOnAmazon.html</src>
 	</article>
+
+	<article id="7">
+		<title>Notes: the most common Git commands</title>
+		<createdAt>12/16/2019</createdAt>
+		<keywords>git: productivity: </keywords>
+		<description></description>
+		<src>gitcommands.html</src>
+	</article>
 </root>
