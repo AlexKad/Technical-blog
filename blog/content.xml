@@ -56,10 +56,10 @@
 	</article>
 
 	<article id="7">
-		<title>Notes: the most common Git commands</title>
+		<title>Git: global settings &amp; ignore file</title>
 		<createdAt>12/16/2019</createdAt>
 		<keywords>git: productivity: </keywords>
-		<description></description>
-		<src>gitcommands.html</src>
+		<description>Quick introduction to Git: how to customize Git environment.</description>
+		<src>gitsettings.html</src>
 	</article>
 </root>

@@ -24,6 +24,7 @@ a:focus,
 a:hover{
   color: #23527c;
 }
+pre{ background: #f3f2f9; }
 
 .header{
 	overflow: hidden;
