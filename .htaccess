@@ -1,6 +1,10 @@
 RewriteEngine On
 # turn on the mod_rewrite engine
 
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# force to use https
+
 RewriteCond %{REQUEST_FILENAME}.php -f
 # if the requested filename with .php extension exists
 
