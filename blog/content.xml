@@ -58,8 +58,27 @@
 	<article id="7">
 		<title>Git: global settings &amp; ignore file</title>
 		<createdAt>12/16/2019</createdAt>
-		<keywords>git: productivity: </keywords>
+		<keywords>git; productivity; </keywords>
 		<description>Quick introduction to Git: how to customize Git environment.</description>
 		<src>gitsettings.html</src>
 	</article>
+
+	<article id="8">
+		<title>A word about HTTPS</title>
+		<createdAt>01/10/2020</createdAt>
+		<keywords>https; security; protocol;</keywords>
+		<description>Days ago HTTPS (secured HTTP) was used mostly to protect privacy, secure payment transactions and accounts.
+			Recently both Google Chrome and Firefox launched browser updates (versions 56 and 51, respectively)
+			that warn users if connection is not secured for every website that use HTTP instead of HTTPS.</description>
+		<src>https.html</src>
+	</article>
+
+	<!-- <article id="9">
+		<title>Mastering command line</title>
+		<createdAt>01/10/2020</createdAt>
+		<keywords>commandline; productivity;</keywords>
+		<description></description>
+		<src>commandline.html</src>
+	</article> -->
+
 </root>
