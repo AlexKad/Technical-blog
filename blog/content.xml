@@ -73,12 +73,12 @@
 		<src>https.html</src>
 	</article>
 
-	<!-- <article id="9">
-		<title>Mastering command line</title>
-		<createdAt>01/10/2020</createdAt>
+	<article id="9">
+		<title>Command line: basic knowledge</title>
+		<createdAt>01/16/2020</createdAt>
 		<keywords>commandline; productivity;</keywords>
 		<description></description>
 		<src>commandline.html</src>
-	</article> -->
+	</article>
 
 </root>
