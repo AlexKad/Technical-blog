@@ -1,3 +1,11 @@
+---
+title: "Contact form with PHP mail() and SMTP authentication"
+date: 2017-05-12T22:10:36-08:00
+tags: ["php", "contact form", "SMTP"]
+description: "When you developing web sites in most cases you facing up with necessity to create 'contact us' form. No matter if it is a simple landing page for a small business, portfolio web site or a huge web platform, everyone wants to communicate, leave a feedback, ask question or whatever. Whereas some popular CMS platforms provide developers with different mailing addons, you might need something simple with possibility to customize it. Here is my simple 'contact us' form with HTML and PHP."
+draft: false
+---
+
 <section class="main container">
 		<div class="article">
 			<h2>Contact form with PHP mail() and SMTP authentication</h2>
@@ -12,20 +20,20 @@
 
 	// read values from user inputs	 				 
 	$from = Trim(stripslashes($_POST['email'])); 	
-	$name = Trim(stripslashes($_POST['name'])); 
+	$name = Trim(stripslashes($_POST['name']));
 	$message = Trim(stripslashes($_POST['message']));
 
 	// set your email address and subject. Make body from values above
 	$to = "alex &lt;akad.alex@gmail.com&gt;";
 	$subject = "New Message from website!";
 	$body = "Name: ".$name."\n"."Message: ".$message;
-	 
+
 	// Set your smtp server, and login/password for authentification
 	$host = "cpanel.freehosting.com";
 	$username = "mailaccount@aleksandraweb.com";
 	$password = "here_is_your_password";
-	 
-	//create headers 
+
+	//create headers
 	$headers = array ('From' =&gt; $from,
 	   		  'To' =&gt; $to,
 	   		  'Subject' =&gt; $subject);
@@ -38,8 +46,8 @@
 
 	//send mail
 	$mail = $smtp-&gt;send($to, $headers, $body);
-	 
-	//handling response and possible errors 
+
+	//handling response and possible errors
 	if (PEAR::isError($mail)) {
 	   echo("&lt;p&gt;" . $mail-&gt;getMessage() . "&lt;/p&gt;");
 	 } else {
@@ -57,19 +65,5 @@
 
 			<p>The full version of contact form with all files you can find <a href="https://github.com/AlexKad/Layout-Templates/tree/master/ContactFormPHP" target="_blank">here</a>.</p>
 		</div>
-
-		<div id="disqus_thread"></div>
-		<script>		
-		var disqus_config = function () {
-			this.page.url = 'http://aleksandraweb.com/blog/contactFormWithPhp.php';
-			this.page.identifier = 'article_contactFormPHP';
-		};
-		(function() { // DON'T EDIT BELOW THIS LINE
-		var d = document, s = d.createElement('script');
-		s.src = 'https://blogtalk-1.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>				
-	</section>	
+			
+	</section>

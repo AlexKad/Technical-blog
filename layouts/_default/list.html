@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head" . }}
+</head>
+<body>
+  {{ partial "header" . }}
+  {{.Content}}
+
+<section class="main container">
+  {{ range (.Paginator 10).Pages }}
+  <div class="article">
+    <a href="{{.Permalink}}" class="article-header">{{.Title}}</a>
+    <div>
+      <span>{{dateFormat "Jan 2, 2006" .Date}}</span>
+      {{ if .Params.tags }} |
+       {{range .Params.tags}}
+         <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+       {{end}}
+      {{end}}
+    </div>
+
+    <p>{{.Description}}
+      <a href="{{.Permalink}}" class="more">Read more  &gt;&gt;</a>
+    </p>
+  </div>
+  {{end}}
+
+  <div class="d-flex justify-content-between">
+    {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}">  Newer Posts </a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">  Older Posts </a>
+    {{ end }}
+  </div>
+
+</section>
+
+  {{ partial "footer" . }}
+</body>
+</html>

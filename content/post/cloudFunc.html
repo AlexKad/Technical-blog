@@ -1,3 +1,13 @@
+---
+title: "Implement google cloud functions with Firebase"
+date: 2017-09-06T22:09:58-08:00
+tags: ["gcloud", "cloud functions", "firebase"]
+description: "I've been playing with Google Cloud Functions for a couple of weeks and actually host
+  one working business web application on the Firebase. While I found gcloud functions easy to write and deploy, there is still no clean and short tutorial on how
+  you can create and start using cloud functions. Below is a short tutorial with some upcoming issues and fixes."
+draft: false
+---
+
 <section class="main container">
 	<div class="article">
 		<h2>Implement google cloud functions with Firebase</h2>
@@ -77,20 +87,5 @@ exports.sayHello = functions.https.onRequest((request, response) => {
 				</li>
 			</ol>
 	</div>
-  <div id="disqus_thread"></div>
-  <script>
-	disqus_config = function () {
-		this.page.url = 'http://aleksandraweb.com/blog/cloudFunc.php';
-		this.page.identifier = 'cloudFunc';
-	};
-
-	(function() { // DON'T EDIT BELOW THIS LINE
-	var d = document, s = d.createElement('script');
-	s.src = 'https://blogtalk-1.disqus.com/embed.js';
-	s.setAttribute('data-timestamp', +new Date());
-	(d.head || d.body).appendChild(s);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </section>

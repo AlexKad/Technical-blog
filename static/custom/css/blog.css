@@ -239,3 +239,13 @@ table td{
   padding:5px;
   border: 1px solid grey;
 }
+
+a.tag{
+  padding: 2px 7px;
+  border-radius: 8px;
+  background: #dadaff;
+}
+a.tag:hover,
+a.tag:active{
+  text-decoration: none;
+}
