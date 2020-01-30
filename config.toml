@@ -5,3 +5,4 @@ title = "Aleksandra. Web Developer"
 
 [[deployment.targets]]
 name = "personalblog"
+URL = "gs://<Bucket Name>"
