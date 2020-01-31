@@ -15,7 +15,7 @@
       <span>{{dateFormat "Jan 2, 2006" .Date}}</span>
       {{ if .Params.tags }} |
        {{range .Params.tags}}
-         <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+         <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
        {{end}}
       {{end}}
     </div>

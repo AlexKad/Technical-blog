@@ -25,6 +25,10 @@ handlers:
   static_files: public/post/index.html
   upload: public/*
 
+- url: /tags
+  static_files: public/tags/index.html
+  upload: public/*
+
 # hugo generates pages in directories so check for index.html first
 - url: /(.*)/
   static_files: public/\1/index.html
@@ -35,3 +39,7 @@ handlers:
 
 - url: /post
   static_dir: public/post/
+
+- url: /tags
+  static_files: public/tags/\1/index.html
+  upload: public/*
