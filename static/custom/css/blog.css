@@ -13,7 +13,18 @@
 
 html, body{
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Open Sans",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
 	color: #555;
 }
 a{
@@ -24,14 +35,15 @@ a:focus,
 a:hover{
   color: #23527c;
 }
-pre{ background: #f3f2f9; }
+pre{ background: #f3f2f9; padding: 5px; }
+code { padding: 3px; }
 
 .header{
 	overflow: hidden;
 	background-color: #5e5ea5;
   color: white;
   letter-spacing: 0.3em;
-  font-family: monospace;
+  font-family: 'Zilla Slab', serif;
   text-transform: uppercase;
   padding-bottom:40px;
 }
