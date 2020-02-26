@@ -12,4 +12,4 @@ hugo deploy
 
 # deploy app to Cloud
 echo 'deploy'
-cloud app deploy
+gcloud app deploy

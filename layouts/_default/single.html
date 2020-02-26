@@ -5,8 +5,22 @@
 </head>
 <body>
   {{ partial "header" . }}
-    
-    {{.Content}}
+  <section class="main container">
+    <div class="">
+      <span>{{dateFormat "Jan 2, 2006" .Date}}</span>
+      {{ if .Params.tags }} |
+       {{range .Params.tags}}
+         <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+       {{end}}
+      {{end}}
+    </div>
+
+    <div class="article pt-4">
+      {{.Content}}
+    </div>
+
+    <span class="mt-1"><a href="{{.Site.BaseURL}}/post/">Back to blog</a></span>
+  </section>
 
   {{ partial "footer" . }}
 </body>
