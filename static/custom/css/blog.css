@@ -105,6 +105,10 @@ a.viewmore:hover{
 	color: #343434;
 }
 
+.card-header {
+  padding: 0.3rem 0.5rem;
+}
+
 .blog-header{
 	cursor: pointer;
 }

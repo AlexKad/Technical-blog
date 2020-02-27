@@ -1,0 +1,191 @@
+---
+title: "Introduction to Hugo"
+date: 2020-02-14T13:58:47-08:00
+tags: ["hugo", "development", "gcloud"]
+description: "Hugo is an open source static site builder. It is fast (less than a 1 sec per page),
+powerfull and easy to use. Hugo supports unlimited content types, tags, menus,
+dynamic API-driven content, and more, all without plugins. This article
+collects an explanation of the most common structure of Hugo projects with some snippets."
+draft: true
+---
+
+<p>Hugo is an open source static site builder. It is fast (less than a 1 sec per page),
+powerfull and easy to use. Hugo supports unlimited content types, tags, menus,
+dynamic API-driven content, and more, all without plugins. </p>
+<p>I have chose Hugo to maintain a corporate blog for NMLStream and recently decided
+  to switch my own blog to the Hugo as well. This article is a quick guide (mostly for myself as a reminder)
+  with an explanation of the most common structure of Hugo projects with some snippets.</p>
+
+<p>
+  A command <code>hugo new site &lt;folder_path&gt;</code> will automatically create a new Hugo project.
+  By default Hugo project contains the following folders and config file:
+</p>
+
+<div class="accordion">
+  <div class="card">
+    <a data-toggle="collapse" href="#archetypes" class="card-header"><h4>archetypes</h4></a>
+    <div id="archetypes" class="collapse multi-collapse p-2">
+      <p>Archetypes defines fields and default values for the frontmatter - a metadata about content (articles): date created, title, author, tags, etc.
+         Archetypes can be default and apply to all content files, or if archetypes
+         has a name of specific directory in content archetype will only apply
+         to files in this directory (dir1.md applies to files in content/dir1).
+         <img src="../../blog-img/hugo_arch.png" class="img-responsive py-3" alt="Archetypes -> post -> default">
+       </p>
+        <p>E.g. in this case archetype settings of the default.md will be applied only for the content/post items. Example of the default.md:</p>
+      <pre><code>---
+      title: "{{ replace .Name "-" " " | title }}"
+      date: {{ .Date }}
+      description: "some unique description of the article"
+      tags: ["tag1", "tag2"]
+      draft: true
+      ---</code></pre>
+    </div>
+
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#content" class="card-header"><h4>content</h4></a>
+    <div id="content" class="collapse multi-collapse p-2">
+      <p>Hugo defines two separate types of content: single page and list page. The layout of each page will be defined in the layout folder.
+        Content folder itself contains only content: text,images, and frontmatter. Content can be a .md or .html. Content can be grouped logically in
+        different folders. For example, if your site has three main sections—blog, articles, and tutorials—you will
+        have three directories at content/blog, content/articles, and content/tutorials. Top of each content file usually contains a frontmatter defined in the archetypes.
+        Example of the content file:</p>
+<pre><code>---
+title: "Introduction to Hugo"
+date: 2020-02-14T13:58:47-08:00
+tags: ["hugo", "development", "gcloud"]
+description: "Some article description"
+draft: true
+---
+
+Content of the article, which may contain a html tags and style classes.
+</code></pre>
+      <p>Note: if you want to use images or other static files (usually located in the static folder) you can't use {{.Site.BaseURL}} variable.
+        You have to define full path to the file like this src="../../blog_img/file_name.png"</p>
+    </div>
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#data" class="card-header"><h4>data</h4></a>
+    <div id="data" class="collapse multi-collapse p-2">
+      <p>Data folder contains some website data, it can be database or simple json file.
+        To access json file  (e.g. in list.html)
+        <code>{{ range .Site.Data.name_of_the_json_file }} {{end}}</code>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#layouts" class="card-header"><h4>layouts</h4></a>
+    <div id="layouts" class="collapse multi-collapse p-2">
+      <p>Layouts folder contains the layouts for the single and list pages.
+        It can be empty if you are using specific theme and theme directory
+        has its own defined layouts. If you add a custom layouts into the top "layouts"
+        directory it will override existing theme.</p>
+
+      <p>To create custom layout in this directory create <code>_default</code>
+        directory with <code>single.html</code> and <code>list.html</code> files (<b>naming here is important!</b>).
+       {{.Content}} will display the content of <code>_index.md</code> file in the content directory. Below is an example of list.html.
+<pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    {{ partial "head" . }}
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    {{ partial "header" . }}
+    {{.Content}}
+
+  &lt;section class="main container"&gt;
+    {{ range (.Paginator 10).Pages }}
+    &lt;div class="article"&gt;
+      &lt;a href="{{.Permalink}}" class="article-header"&gt;{{.Title}}&lt;/a&gt;
+      &lt;div&gt;
+        &lt;span&gt;{{dateFormat "Jan 2, 2006" .Date}}&lt;/span&gt;
+        {{ if .Params.tags }} |
+         {{range .Params.tags}}
+           &lt;a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/"&gt;{{ . }}&lt;/a&gt;
+         {{end}}
+        {{end}}
+      &lt;/div&gt;
+      &lt;p&gt;{{.Description}}
+        &lt;a href="{{.Permalink}}" class="more"&gt;Read more  &gt;&gt;&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    {{end}}
+
+    &lt;div class="d-flex justify-content-between"&gt;
+      {{ if .Paginator.HasPrev }}
+          &lt;a href="{{ .Paginator.Prev.URL }}"&gt;  Newer Posts &lt;/a&gt;
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+          &lt;a href="{{ .Paginator.Next.URL }}"&gt;  Older Posts &lt;/a&gt;
+      {{ end }}
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+    {{ partial "footer" . }}
+  &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre>
+
+      </p>
+
+      <p>In layouts directory you can specify partials - part of the web pages
+        that is identical for every page, like footer or header.
+        {{ partial "header" .  }} - usage in the list.html or single.html.
+        Dot at the end passes the scope of the current file(e.g. to access the Title, URL or other variables).
+        All partials files should be located in the <code>layouts/partials</code> folder.
+      </p>
+
+    </div>
+
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#static" class="card-header"><h4>static</h4></a>
+    <div id="static" class="collapse multi-collapse p-2">
+      <p>Stores all the static content: images, CSS, JavaScript, etc.
+        When Hugo builds your site, all assets inside your static directory are copied over as-is.
+        A good example of using the static folder is for verifying site ownership
+        on Google Search Console, where you want Hugo to copy over a complete HTML
+        file without modifying its content.</p>
+    </div>
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#themes" class="card-header"><h4>themes</h4></a>
+    <div id="themes" class="collapse multi-collapse p-2">
+      <p>If you don't want to set up layouts and style them, you may want to use one of the
+        <a href="https://themes.gohugo.io/" target="_blank">Hugo themes</a> whit predefined layout.
+        All the files in this folder can be overriden if you define your own layout in the "layouts" folder.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <a data-toggle="collapse" href="#config" class="card-header"><h4>config.toml</h4></a>
+    <div id="config" class="collapse multi-collapse p-2">
+      <p>Hugo uses the config.toml, config.yaml, or config.json (if found in the site root) as the default site config file.
+         The user can choose to override that default with one or more site config files using the command line --config switch.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<h2 class=mt-5>Other components</h2>
+<h4>Variables</h4>
+<p>Default  Hugo variables: Title, Date, URL, etc.
+  Custom variables can be added to the front matter. Access will look like {{ .Params.myVar }}.
+
+  Examples of usage:
+  <p>To style elements:<code>&lt;h1 style=“color: {{ .Params.color }};”&gt; Article title&lt;/h1&gt;</code></p>
+  Read more  about variables <a href="Hugo.io/variables" target="_blank">Hugo.io/variables</a>
+</p>
+
+<h4>Functions</h4>
+<p> - Truncate long string to n symbols
+  <code>{{ truncate 10 “Very long description of some boring article}}</code>
+  Result: <code>Very long …</code>
+</p>
+<p> - Arithmetic <code>{{ add 1 5 }}</code> Result: <code>6</code></p>
+<p> - String concatenation <code>{{ sub 1 5 }}</code> Result: <code>15</code></p>
+<p> - Singulirize/pluralize <code>{{ singularize “dogs”}}</code> Result <code>dog</code></p>
+<p> - Looping <code>{{ range .Pages }}   {{end}}</code></p>
