@@ -1,10 +1,10 @@
 ---
-title: "Tricky parts about JS. (part 1)"
+title: "JS in details: interview preparation (part 1, Basic)"
 date: 2020-02-26T20:33:46-08:00
 tags: ["javascript", "interviews"]
 description: "This article opens the set of articles about JS. It covers the most interesting topics about JS,
 contains an explanation to the most common questions and can be used as a preparation to the interviews."
-draft: true
+draft: false
 ---
 
 
@@ -219,26 +219,90 @@ draft: true
      <b>mutation (allowed)</b>! That's the safest and best way to use const.</p>
 </div>
 
+<a data-toggle="collapse" href="#types"><h4>Types</h4></a>
+<div id="types" class="collapse multi-collapse">
+  <p>A variable in JavaScript can contain any data.
+    A variable can at one moment be a string and at another be a number.
+    Programming languages that allow such things are called “dynamically typed”,
+    meaning that there are data types, but variables are not bound to any of them.
+  </p>
+  <p>There are 8 basic data types in JavaScript.
+    <ul>
+      <li><b>number</b> for numbers of any kind: integer or floating-point, integers are limited by ±253.</li>
+      <li><b>bigint</b> is for integer numbers of arbitrary length.</li>
+      <li><b>string</b> for strings. A string may have one or more characters, there’s no separate single-character type.</li>
+      <li><b>boolean</b> for true/false.</li>
+      <li><b>null</b> for unknown values – a standalone type that has a single value null.</li>
+      <li><b>undefined</b> for unassigned values – a standalone type that has a single value undefined.</li>
+      <li><b>object</b> for more complex data structures.</li>
+      <li><b>symbol</b> for unique identifiers.</li>
+    </ul>
+  </p>
+  <pre><code>
+  typeof undefined // "undefined"
+  typeof 0 // "number"
+  typeof 10n // "bigint"
+  typeof true // "boolean"
+  typeof "foo" // "string"
+  typeof Symbol("id") // "symbol"
+  typeof Math // "object"
+  typeof null // "object"
+  typeof alert // "function"
+  </code></pre>
+</div>
+
+<a data-toggle="collapse" href="#postfix"><h4>Postfix & Prefix Increment</h4></a>
+<div id="postfix" class="collapse multi-collapse">
+  <pre><code>
+    let a = 1, b = 1;
+
+    let c = ++a; // c=2, a=2
+    let d = b++; // b=2, d=1
+  </code></pre>
+</div>
+
 <a data-toggle="collapse" href="#func"><h4>Function decalration and function expression</h4></a>
 <div id="func" class="collapse multi-collpase">
-  <!-- TODO: add more from learnjavascript -->
+  <p>In JS functions are values. They can be assigned, copied or declared in any place of the code.
+    If the function is declared as a separate statement in the main code flow,
+    that’s called a <b>function declaration</b>. If the function is created as a part
+    of an expression, it’s called a <b>function expression</b>. Function Declarations are
+    processed before the code block is executed. They are visible everywhere in
+    the block. Function Expressions are created when the execution flow reaches them.</p>
 
-  <p> Function declaration</p>
+  <p>Function Declaration: a function, declared as a separate statement, in the main code flow.</p>
   <pre><code>
   function awesomeFunction(coolThings) {
       // ..
       return amazingStuff;
   }</code></pre>
   <p>
-    vs. function expression
+    vs. Function Expression: a function, created inside an expression or inside
+    another syntax construct. Here, the function
+    is created at the right side of the “assignment expression” =:
+
   </p>
   <pre><code>var awesomeFunction = function(coolThings) {
       // ..
       return amazingStuff;
   };</code></pre>
-  <p>Different from the function declaration form,
-    a function expression is not associated with its identifier
-    until that statement during runtime.
+  <p>
+    The more subtle difference is <b>when</b> a function is created by the JavaScript engine.
+  </p>
+  <hr>
+  <p class="px-2 text-center">
+    <b>A Function Expression is created when the execution reaches it and is usable only from that moment.</b>
+  </p>
+  <p class="px-2 text-center">
+    <b>A Function Declaration can be called earlier than it is defined.</b>
+  </p>
+  <hr>
+  <p>
+    For example, a global Function Declaration is visible in the whole script, no matter where it is.
+    That’s due to internal algorithms. When JavaScript prepares to run the script,
+    it first looks for global Function Declarations in it and creates the functions.
+    We can think of it as an “initialization stage”. And after all Function Declarations
+    are processed, the code is executed. So it has access to these functions.
   </p>
 
 </div>
