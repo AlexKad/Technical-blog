@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head" . }}
+</head>
+<body>
+  <header class="header">
+		<nav class="navbar" role="navigator">
+			<div class="container-fluid">
+				<ul class="nav ml-auto pt-3">
+					<li class="active"><a href="#about" class='slide'>About me</a></li>
+          <li><a href="{{.Site.BaseURL}}/services/">Services</a></li>
+					<li><a href="{{.Site.BaseURL}}/post/">Blog</a></li>
+				</ul>
+			</div>
+		</nav>
+  </header>
+
+  <div class="container">
+    <section class="my-5">
+      <div class="row row-eq-height">
+        <div class="col-4">
+          <div class="card p-2 h-100">
+            <h4 class="text-center">Landing page</h4>
+            <ul>
+              <li>Adaptive layout: desktop & mobile friendly</li>
+              <li>Domain name and hosting setup</li>
+              <li>Basic SEO optimization</li>
+              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
+              <li>Social media widgets</li>
+              <li>Google maps</li>
+              <li>Static content only</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card p-2 h-100">
+            <h4 class="text-center">Business website</h4>
+            <ul>
+              <li>Adaptive layout: desktop & mobile friendly</li>
+              <li>Domain name and hosting setup</li>
+              <li>Basic SEO optimization</li>
+              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
+              <li>Social media widgets</li>
+              <li>Google maps</li>
+              <li data-toggle="tooltip" title="You can add/edit/remove text and images without professional help">
+                Content management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card p-2 h-100">
+            <h4 class="text-center">Ecommerce website</h4>
+            <ul>
+              <li>Adaptive layout: desktop & mobile friendly</li>
+              <li>Domain name and hosting setup</li>
+              <li>Basic SEO optimization</li>
+              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
+              <li>Social media widgets</li>
+              <li>Google maps</li>
+              <li>Content management</li>
+              <li>Ability to sell products online</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  {{ partial "footer" . }}
+</body>
+</html>
