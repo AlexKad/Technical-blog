@@ -3,65 +3,152 @@
 <head>
   {{ partial "template-head" . }}
   <link id="color" rel="stylesheet" href="{{.Site.BaseURL}}/templates/main.css">
-  <link id="color" rel="stylesheet" href="{{.Site.BaseURL}}/vendors/ionicons/css/ionicons.min.css">
-
 </head>
 <body>
   <header class="header">
-    <div class="p-3 bg-light">
-      <div class="row">
-        <span><i>Please, adjust your preferences:</i></span>
-        <div class="col-4">
-          <div class="color-switcher row mx-2">
-              <span>Color scheme: </span>
-              <div class="switcher" href="lightblue.css" style="background-color: #1c7dd5"></div>
-              <div class="switcher" href="red.css" style="background-color: #b80405"></div>
-              <div class="switcher active" href="orange.css" style="background-color: #d44500"></div>
-              <div class="switcher" href="green.css" style="background-color: #057a4e"></div>
-              <div class="switcher" href="green2.css" style="background-color: #4d7d07"></div>
-              <div class="switcher" href="blue.css" style="background-color: #172d66"></div>
-              <div class="switcher" href="violet.css" style="background-color: #460e29"></div>
-          </div>
-        </div>
+    {{ partial "template-switcher" . }}
 
-        <div class="col-4">
-          <div class="font-switcher mx-2">
-            <span>Font: </span>
-            <select class="ml-2">
-              <option selected>Times New Roman</option>
-              <option value="1">Font 2</option>
-              <option value="2">Font 3</option>
-              <option value="3">Three</option>
-            </select>
+    <nav class="navbar navbar-expand-lg navbar-light my-4">
+      <a class="navbar-brand" href="#">
+        <!-- <img src="" alt="company logo"> -->
+        Company Logo
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <section class="company bg-info text-white">
+      <div class="container">
+        <div class="row"></div>
+        <div class="row py-5">
+          <div class="col-8">
+            <h1>Company Name</h1>
+            <hr class="bg-white">
+            <h4>Simple solution for your business</h4>
+          </div>
+          <!-- <div class="col-4 text-right mt-4">
+            <div class="row">
+              <i class="fa fa-phone fa-2x mr-3"></i>
+              <h5> (650)999-33-55</h5>
+            </div>
+            <div class="row">
+              <i class="fa fa-envelope-o fa-2x mr-3"></i>
+              <h5>service@gmail.com</h5>
+            </div> -->
+
           </div>
         </div>
 
       </div>
-    </div>
+    </section>
 
-		<nav class="navbar" role="navigator">
-			<div class="container-fluid">
-				<!-- <ul class="nav ml-auto pt-3">
-					<li class="active"><a href="#about" class='slide'>About me</a></li>
-          <li><a href="{{.Site.BaseURL}}services/">Services</a></li>
-					<li><a href="{{.Site.BaseURL}}post/">Blog</a></li>
-				</ul> -->
-			</div>
-		</nav>
-  </header>
+    <section id="features" class="features">
+      <div class="container-fluid p-5 bg-light">
+        <!-- <h3 class="text-center text-uppercase">Core <span class="text-info">Features</span></h3> -->
+        <div class="row h-100">
+          <div class="col-4">
+            <div class="text-center p-3">
+              <i class="fa fa-line-chart fa-4x text-info p-3"></i>
+              <h5 class="text-uppercase">Fully optimized</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorum iure enim nam cumque. Deserunt, ex, praesentium!</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center p-3">
+              <i class="fa fa-wrench fa-4x text-info p-3"></i>
+              <h5 class="text-uppercase">Customer Support</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores libero officia reprehenderit ipsa.</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center p-3">
+              <i class="fa fa-users fa-4x text-info p-3"></i>
+              <h5 class="text-uppercase">Creative solutions</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores libero officia reprehenderit ipsa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h1></h1>
-  </section>
+    <section class="about" id="about">
+      <div class="container p-5">
+        <h3 class="text-center text-uppercase"><span class="text-info">about</span> company</h3>
+        <div class="row justify-content-md-center">
+          <div class="col-10 col-md-6 text-center">
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Amet totam unde a porro ex vitae quasi, ipsam consequatur repudiandae veritatis!</p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row py-5 justify-content-md-center">
+          <div class="col-5">
+            <h2 class="text-right h-100">
+              <b>We find best solutions for your business needs.</b>
+            </h2>
+          </div>
+          <div class="col-7">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Obcaecati libero, totam laborum facere doloribus debitis esse
+              excepturi, veniam corrupti dolorum, eligendi. Repudiandae
+              architecto beatae fugiat non, ullam eveniet dolorum voluptas,
+              nisi hic voluptatum sequi quaerat cupiditate maxime nemo facere
+              voluptatem magni ipsa ab tenetur et fugit corporis vel rerum
+              ratione quisquam? Facere fugiat rerum sapiente, beatae reiciendis!
+              Cupiditate, ratione, quasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="act bg-info text-white">
+      <div class="container p-3">
+        <div class="row">
+          <h4 class="ml-auto text-uppercase">ready to try our product?</h4>
+          <button class="btn btn-outline-light ml-2 mr-auto">Contact us</button>
+        </div>
+      </div>
+    </section> -->
+
+
+    <section id="testimonials" class="testimonials">
+      <div class="container-fluid p-5">
+
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+
+    </section>
+
+    <section id="pricing" class="pricing">
+
+    </section>
+
 
   {{ partial "template-footer" . }}
-  <script>
-    $(document).on('click', '.color-switcher .switcher', function(){
-      var stylelink = $(this).attr('href');
-      $('#color').attr('href',stylelink);
-      $('.switcher').removeClass('active');
-      $(this).addClass('active');
-    });
-  </script>
+
 </body>
 </html>

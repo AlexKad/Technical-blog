@@ -7,3 +7,18 @@
 <script src="{{.Site.BaseURL}}/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="{{.Site.BaseURL}}/vendors/scrollreveal/scrollreveal.min.js"></script>
+
+<script>
+  $(document).on('click', '.color-switcher .switcher', function(){
+    var stylelink = $(this).attr('href');
+    $('#color').attr('href',stylelink);
+    $('.switcher').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $(document).on('change', '.font-switcher', function(){
+    var fontlink = this.value;
+    //$('#font').attr('href',fontlink);
+    $('section,nav').css({'font-family': fontlink});
+  });
+</script>
