@@ -43,3 +43,8 @@ footer .author{
   color: #c5c5c5;
   padding-top: 10px;
 }
+
+footer .author a{
+  font-family: 'Courgette', cursive;
+  font-size:18px;
+}
