@@ -19,3 +19,27 @@
 section{
   padding: 80px 0;
 }
+
+.main-color{
+  color: #17a2b8;
+}
+
+.main-bg{
+  background-color: #17a2b8;
+  color: white;
+}
+
+/* .compl-color{
+  color:
+} */
+
+footer{
+  background-color: #545454;
+  color: white;
+}
+
+footer .author{
+  background: #353535;
+  color: #c5c5c5;
+  padding-top: 10px;
+}
