@@ -1,16 +1,24 @@
 <div class="p-3 bg-light">
   <div class="row justify-content-md-center">
     <span><i>Please, adjust your preferences:</i></span>
-    <div class="col-4">
-      <div class="color-switcher row mx-2">
-          <span>Color scheme: </span>
-          <div class="switcher" href="lightblue.css" style="background-color: #1c7dd5"></div>
-          <div class="switcher" href="red.css" style="background-color: #b80405"></div>
-          <div class="switcher active" href="orange.css" style="background-color: #d44500"></div>
-          <div class="switcher" href="green.css" style="background-color: #057a4e"></div>
-          <div class="switcher" href="green2.css" style="background-color: #4d7d07"></div>
-          <div class="switcher" href="blue.css" style="background-color: #172d66"></div>
-          <div class="switcher" href="violet.css" style="background-color: #460e29"></div>
+    <div class="col-6">
+      <div class="color-switcher mx-2">
+          <span><b>Color scheme: &nbsp;</b></span>
+          <span id="color-placeholder">trust &amp; secure (turquoise)</span>
+          <div class="row mx-2">
+            <div class="switcher" mainC="#1d77ca" style="background-color: #1d77ca" name="river blue (calm &amp; professional)"></div>
+            <div class="switcher active" mainC="#17a2b8" style="background-color: #17a2b8" name="turquoise (trust &amp; secure)"></div>
+            <div class="switcher" mainC="#f7be10" style="background-color: #f7be10" name="yellow (positive &amp; creative)"></div>
+            <div class="switcher" mainC="#d44500" style="background-color: #d44500" name="orange (powerful &amp; vivid)"></div>
+            <div class="switcher" mainC="#b80405" style="background-color: #b80405" name="red (action &amp; energy)"></div>
+
+            <div class="switcher" mainC="#057a4e" style="background-color: #057a4e" name="dark green (wealth)"></div>
+            <div class="switcher" mainC="#5a8e0f" style="background-color: #5a8e0f" name="green (peace &amp; nature)"></div>
+            <div class="switcher" mainC="#274490" style="background-color: #274490" name="royal blue (professional)"></div>
+            <div class="switcher" mainC="#5b2c55" style="background-color: #5b2c55" name="plum (luxury &amp; warmth)"></div>
+            <div class="switcher" mainC="#a53472" style="background-color: #a53472" name="rose( bright &amp; romantic)"></div>
+          </div>
+
       </div>
     </div>
 
@@ -22,7 +30,6 @@
           <option value="'Lato', sans-serif">Light</option>
           <option value="'Playfair Display', serif">Formal Display</option>
           <option value="'Merriweather', serif">Formal soft</option>
-          <!-- <option value="'Alegreya SC', serif">Formal </option> -->
           <option value="'BioRhyme', serif">Playful Techno</option>
           <option value="'Lemonada', cursive">Decorative</option>
         </select>

@@ -3,18 +3,32 @@
 <html lang="en">
 <head>
   {{ partial "head" . }}
+
+  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.1">
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
 		<nav class="navbar" role="navigator">
 			<div class="container-fluid">
-				<ul class="nav ml-auto pt-3">
-					<li class="active"><a href="#about" class='slide'>About me</a></li>
-          <li><a href="{{.Site.BaseURL}}/services/">Services</a></li>
-					<li><a href="{{.Site.BaseURL}}/post/">Blog</a></li>
-				</ul>
+          <ul class="nav ml-auto pt-3">
+  					<li class="active"><a href="#about" class='slide'>About me</a></li>
+            <li><a href="{{.Site.BaseURL}}/services/">Services</a></li>
+  					<li><a href="{{.Site.BaseURL}}/post/">Blog</a></li>
+  				</ul>
 			</div>
 		</nav>
+
+    <div class="container">
+      <div class="row w-100">
+        <div class="logo-holder row mx-auto">
+          <h3 class="row">A1<div>eksandra&nbsp;</div>O<div>rlova</div></h3>
+        </div>
+      </div>
+      <div class="row w-100">
+        <h5 class="mx-auto">Web design &amp; development</h5>
+      </div>
+    </div>
   </header>
 
   <div class="container">
