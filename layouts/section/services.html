@@ -4,8 +4,9 @@
 <head>
   {{ partial "head" . }}
 
-  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.1">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.21">
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kalam|Roboto:100&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
@@ -31,7 +32,7 @@
     </div>
   </header>
 
-  <div class="container">
+  <div class="container services">
     <section class="my-5">
       <div class="row row-eq-height">
         <div class="col-4">
@@ -83,6 +84,67 @@
       </div>
     </section>
   </div>
+
+  <section>
+    <div class="container p-5">
+
+      <h3 class="text-center text-info text-uppercase">Before you start</h3>
+      <div class="row">
+        <div class="col-6 mx-auto text-center">
+          <p class="sub-header">I want you to have a nice and smooth experience.
+            To help you understand the basic information about
+            the website development and pricing, please refer this Q&amp;A section.
+          </p>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="question" data-toggle="collapse" href="#beginning">
+          <span>Basic information about website and possible expenses</span>
+        </div>
+        <div id="beginning" class="answer collapse multi-collapse">
+          <p>To build a website you need the following components:</p>
+          <ul>
+            <li>Domain name</li>
+            <li>Hosting</li>
+            <li>Website code or website layout</li>
+          </ul>
+          <p>Domain name and hosting prices</p>
+        </div>
+
+        <div class="question" data-toggle="collapse" href="#domainname">
+          <span>How to get a domain name?</span>
+        </div>
+        <div id="domainname" class="answer collapse multi-collapse">
+          <p>What is domain name</p>
+          <p>Annual payment</p>
+          <p>Who is</p>
+          <p>Domain name registrars</p>
+          <p>Hide personal info</p>
+        </div>
+
+        <div class="question" data-toggle="collapse" href="#hosting">
+          <span>How to choose the right hosting?</span>
+        </div>
+        <div id="hosting" class="answer collapse multi-collapse">
+          <p>Static hosting and CMS</p>
+          <p>Comparison table</p>
+          <p>Pricing</p>
+        </div>
+
+        <div class="question" data-toggle="collapse" href="#addcontent">
+          <span>Third-party content</span>
+        </div>
+        <div id="addcontent" class="answer collapse multi-collapse">
+          <p>Mailchimp and mail subscription</p>
+          <p>Booking & scheduling services</p>
+          <p>Google maps</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
 
   {{ partial "footer" . }}

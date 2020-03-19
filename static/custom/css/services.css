@@ -19,7 +19,39 @@
   line-height: 1.5;
 }
 
+.sub-header{
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 .logo-holder:hover h3 div{
   max-width: 1000px;
   line-height: 1.5;
+}
+
+.services .card{
+  font-size:16px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.qa{
+  font-size: 16px;
+}
+
+.qa .question{
+  padding: 15px 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #f7f7f7;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+}
+
+.qa .answer{
+  padding: 10px;
+  border: 1px solid #f7f7f7;
+  background: #f7f7f7;
+  border-radius: 5px;
 }
