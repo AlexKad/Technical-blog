@@ -42,7 +42,14 @@
   font-size:14px;
   font-weight: 400;
   border: 0px;
-  padding: 40px;
+}
+.features .card>.fa {
+  color: #5e5ea5;
+  /* border: 1px solid #5e5ea5; */
+  margin: 7px;
+}
+.features .card>div{
+  padding: 40px; padding-top: 5px;
 }
 
 .qa{
