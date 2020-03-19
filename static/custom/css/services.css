@@ -1,5 +1,6 @@
 .logo-holder{
   font-size:30px;
+  cursor: pointer;
 }
 
 .logo-holder h3{
@@ -29,10 +30,19 @@
   line-height: 1.5;
 }
 
-.services .card{
-  font-size:16px;
+.features{
+  padding: 50px 0;
+}
+.features .card h4{
+  font-size: 20px;
+  font-weight: 500;
   text-transform: uppercase;
+}
+.features .card{
+  font-size:14px;
   font-weight: 400;
+  border: 0px;
+  padding: 40px;
 }
 
 .qa{

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Kalam|Roboto:100&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header class="header">
 		<nav class="navbar" role="navigator">
 			<div class="container-fluid">
@@ -32,69 +33,71 @@
     </div>
   </header>
 
-  <div class="container services">
-    <section class="my-5">
+  <section class="features bg-light">
+    <div class="container">
       <div class="row row-eq-height">
         <div class="col-4">
-          <div class="card p-2 h-100">
-            <h4 class="text-center">Landing page</h4>
-            <ul>
-              <li>Adaptive layout: desktop & mobile friendly</li>
-              <li>Domain name and hosting setup</li>
-              <li>Basic SEO optimization</li>
-              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
-              <li>Social media widgets</li>
-              <li>Google maps</li>
-              <li>Static content only</li>
-              <li>1 page &amp; up to 5 sections</li>
-            </ul>
+          <div class="card h-100">
+            <h4 class="text-center">Adaptive layout</h4>
+            <p>Your website works perfectly on the desktop as well as laptops and mobile devices.</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="card p-2 h-100">
-            <h4 class="text-center">Business website</h4>
-            <ul>
-              <li>Adaptive layout: desktop & mobile friendly</li>
-              <li>Domain name and hosting setup</li>
-              <li>Basic SEO optimization</li>
-              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
-              <li>Social media widgets</li>
-              <li>Google maps</li>
-              <li data-toggle="tooltip" title="You can add/edit/remove text and images without professional help">
-                Content management</li>
-              <li>Up to 5 different pages</li>
-            </ul>
+          <div class="card h-100">
+            <h4 class="text-center">Complete setup</h4>
+            <p>Everything you need from domain name to hosting to have your website up and running.</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="card p-2 h-100">
-            <h4 class="text-center">Ecommerce website</h4>
-            <ul>
-              <li>Adaptive layout: desktop & mobile friendly</li>
-              <li>Domain name and hosting setup</li>
-              <li>Basic SEO optimization</li>
-              <li>UX friendly design <a href="{{.Site.BaseURL}}/templates/">templates</a> or custom design</li>
-              <li>Social media widgets</li>
-              <li>Google maps</li>
-              <li>Content management</li>
-              <li>Ability to sell products online</li>
-            </ul>
+          <div class="card h-100">
+            <h4 class="text-center">UX friendly design</h4>
+            <p>Choose  <a href="{{.Site.BaseURL}}/templates/">from a variety of templates</a>
+               or request an individual design.
+              Use your corporate colors, logos and pictures.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-  </div>
 
-  <section>
+      <div class="row row-eq-height my-3">
+        <div class="col-4">
+          <div class="card h-100">
+            <h4 class="text-center">Services integration</h4>
+            <p class="my-1">Everything you need to help visitors to stay tuned and keep interest:</p>
+            <ul>
+              <li>Google maps</li>
+              <li>Social media widgets</li>
+              <li>Booking and scheduling services</li>
+              <li>Mail subscription</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card h-100">
+            <h4 class="text-center">SEO optimization</h4>
+            <p>Basic SEO optimization to help Google's search engine to parse your
+              website corretly and improve searching results.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card h-100">
+            <h4 class="text-center">Contact us form</h4>
+            <p>Elegant solution to welcome your visitors to interact with you and your company,
+              ask questions or request a service without leaving the website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa">
     <div class="container p-5">
-
       <h3 class="text-center text-info text-uppercase">Before you start</h3>
       <div class="row">
-        <div class="col-6 mx-auto text-center">
-          <p class="sub-header">I want you to have a nice and smooth experience.
-            To help you understand the basic information about
-            the website development and pricing, please refer this Q&amp;A section.
-          </p>
+        <div class="col-10 col-md-6 mx-auto text-center">
+          <p class="sub-header">I want you to have a nice and smooth experience.<br/>
+            The following section will help you to understand the basic information about
+            the website development and pricing.</p>
         </div>
       </div>
 
@@ -146,6 +149,27 @@
     </div>
   </section>
 
+  <section class="services">
+    <div class="container my-5">
+      <div class="row row-eq-height justify-content-md-center">
+        <div class="col-12 col-md-4">
+          <div class="card p-2 h-100">
+            <h4 class="text-center">Landing page</h4>
+            <p>1 page &amp; up to 5 sections</p>
+            <p>Excellent solution for the portfolio or small business.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card p-2 h-100">
+            <h4 class="text-center">Business website</h4>
+            <p>Up to 5 different pages</p>
+            <p>Best for the business that provides a variety of services.
+              May include gallery, detailed description of services and products, booking service and many other.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   {{ partial "footer" . }}
 </body>
