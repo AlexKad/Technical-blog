@@ -1,10 +1,14 @@
+.header .navbar{
+  margin-bottom: 10vh;
+}
+
 .logo-holder{
   font-size:30px;
   cursor: pointer;
 }
 
 .logo-holder h3{
-  color: red;
+  color: #FFC107;
   font-family: 'Courgette', cursive;
   font-size:40px;
   line-height: 1;
@@ -20,9 +24,13 @@
   line-height: 1.5;
 }
 
+h3, h4 { color: #45467b; }
+
+.bg-main{ background: #5e5ea5; }
+
 .sub-header{
   font-weight: 300;
-  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .logo-holder:hover h3 div{
@@ -35,19 +43,35 @@
 }
 .features .card h4{
   font-size: 20px;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 400;
+  color: #45467b;
 }
 .features .card{
   font-size:14px;
   font-weight: 400;
+  overflow: hidden;
   border: 0px;
 }
-.features .card>.fa {
-  color: #5e5ea5;
-  /* border: 1px solid #5e5ea5; */
-  margin: 7px;
+
+.features .card:before{
+  position: absolute;
+  top: -42px;
+  left: -100px;
+  z-index: 0;
+  content: " ";
+  width: 230px;
+  height: 100px;
+  transform: rotate(-40deg);
+  border-radius: 0;
+  background: #a0a1d221;
 }
+
+.features .card .icon{
+  color: #5e5ea5;
+  margin: 10px;
+  font-size: 2.3em;
+}
+
 .features .card>div{
   padding: 40px; padding-top: 5px;
 }
@@ -71,4 +95,17 @@
   border: 1px solid #f7f7f7;
   background: #f7f7f7;
   border-radius: 5px;
+}
+
+.act {
+  padding: 20px 0;
+}
+
+.act a{
+  color: white !important;
+  text-decoration: none;
+}
+
+.act a:hover{
+  color: #5e5ea5 !important;
 }

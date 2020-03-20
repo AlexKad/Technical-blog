@@ -4,9 +4,14 @@
 <head>
   {{ partial "head" . }}
 
-  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.21">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.22">
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kalam|Roboto:100&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/vendors/fa5/css/fontawesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/vendors/fa5/css/brands.min.css">
+
 </head>
 <body>
 
@@ -28,7 +33,7 @@
         </div>
       </div>
       <div class="row w-100">
-        <h5 class="mx-auto">Web design &amp; development</h5>
+        <h5 class="w-100 text-center">Web design &amp; development</h5>
       </div>
     </div>
   </header>
@@ -36,29 +41,29 @@
   <section class="features bg-light">
     <div class="container">
       <div class="row row-eq-height">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="icon fas fa-laptop-code"></i>
             <div>
-              <h4 class="text-right">Adaptive layout</h4>
+              <h4 class="text-center">Adaptive layout</h4>
               <p>Your website works perfectly on the desktop as well as laptops and mobile devices.</p>
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+             <i class="icon fas fa-tools"></i>
             <div>
-              <h4 class="text-right">Complete setup</h4>
-              <p>Everything you need from domain name to hosting to have your website up and running.</p>
+              <h4 class="text-center">Complete setup</h4>
+              <p>Everything you need from unique domain name to hosting to have your website up and running.</p>
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="icon fas fa-user-circle"></i>
             <div>
-              <h4 class="text-right">UX friendly design</h4>
+              <h4 class="text-center">UX friendly design</h4>
               <p>Choose  <a href="{{.Site.BaseURL}}/templates/">from a variety of templates</a>
                  or request an individual design.
                 Use your corporate colors, logos and pictures.
@@ -69,12 +74,12 @@
       </div>
 
       <div class="row row-eq-height my-3">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="icon far fa-map"></i>
             <div>
-              <h4 class="text-right">Services integration</h4>
-              <p class="my-1">Everything you need to help visitors to stay tuned and keep interest:</p>
+              <h4 class="text-center">Services integration</h4>
+              <p class="my-1">To help visitors to stay tuned and keep their interest:</p>
               <ul>
                 <li>Google maps</li>
                 <li>Social media widgets</li>
@@ -84,22 +89,22 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="icon fas fa-chart-line"></i>
             <div>
-              <h4 class="text-right">SEO optimization</h4>
+              <h4 class="text-center">SEO optimization</h4>
               <p>Basic SEO optimization to help Google's search engine to parse your
                 website corretly and improve searching results.</p>
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="card h-100">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="icon far fa-address-card"></i>
             <div>
-              <h4 class="text-right">Contact us form</h4>
-              <p>Elegant solution to welcome your visitors to interact with you and your company,
+              <h4 class="text-center">Contact us form</h4>
+              <p>An elegant solution to welcome your visitors to interact with you and your company,
                 ask questions or request a service without leaving the website.</p>
             </div>
           </div>
@@ -110,7 +115,7 @@
 
   <section class="qa">
     <div class="container p-5">
-      <h3 class="text-center text-info text-uppercase">Before you start</h3>
+      <h3 class="text-center"> – Before you start – </h3>
       <div class="row">
         <div class="col-10 col-md-6 mx-auto text-center">
           <p class="sub-header">I want you to have a nice and smooth experience.<br/>
@@ -164,6 +169,15 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <section class="act bg-main">
+    <div class="container">
+      <h4 class="text-center text-white">Are you ready to empower your business?</h4>
+      <div class="row justify-content-md-center py-3">
+        <a class="btn btn-outline-light">Request a quote</a>
+      </div>
     </div>
   </section>
 
