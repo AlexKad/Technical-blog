@@ -98,14 +98,23 @@ h3, h4 { color: #45467b; }
 }
 
 .act {
-  padding: 20px 0;
+  padding: 35px 0 20px 0;
 }
 
-.act a{
-  color: white !important;
+.act a.btn-act{
+  color: #5d5ea4;
+  border-color: #FF9800;
+  background: #FF9800;
+  border-radius: 25px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
-.act a:hover{
-  color: #5e5ea5 !important;
+.act a.btn-act:hover{
+  /* color: #353561;
+  background-color: #f9a72f;
+  border-color: #f9a72f; */
 }
