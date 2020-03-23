@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "template-head" . }}
+  <link id="color" rel="stylesheet" href="{{.Site.BaseURL}}/templates/main.css">
+</head>
+<body>
+  <header class="header">
+
+  </header>
+
+  <div class="container">
+    <div class="row">Choose template:</div>
+    <ul>
+      {{ range .Pages }}
+      <li><a href="{{.Permalink}}" class="">{{.Title}}</a></li>
+      {{end}}
+    </ul>
+  </div>
+
+</body>
+</html>

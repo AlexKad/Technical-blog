@@ -15,7 +15,6 @@ body{
   opacity: 1;
 }
 
-
 section{
   padding: 50px 0;
 }
@@ -28,10 +27,6 @@ section{
   background-color: #17a2b8;
   color: white;
 }
-
-/* .compl-color{
-  color:
-} */
 
 footer{
   background-color: #545454;
