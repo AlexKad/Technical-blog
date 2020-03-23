@@ -54,7 +54,7 @@ h3, h4 { color: #45467b; }
 }
 
 .features .card:before{
-  position: absolute;
+  /* position: absolute;
   top: -42px;
   left: -100px;
   z-index: 0;
@@ -63,12 +63,14 @@ h3, h4 { color: #45467b; }
   height: 100px;
   transform: rotate(-40deg);
   border-radius: 0;
-  background: #a0a1d221;
+  background: #a0a1d221; */
 }
 
 .features .card .icon{
   color: #5e5ea5;
-  margin: 10px;
+  /* margin: 10px; */
+  margin-top: 25px;
+  margin-left:20px;
   font-size: 2.3em;
 }
 
@@ -103,8 +105,8 @@ h3, h4 { color: #45467b; }
 
 .act a.btn-act{
   color: #5d5ea4;
-  border-color: #FF9800;
-  background: #FF9800;
+  border-color: #FFC107;
+  background: #FFC107;
   border-radius: 25px;
   padding: 15px 25px;
   font-weight: 600;
@@ -114,7 +116,6 @@ h3, h4 { color: #45467b; }
 }
 
 .act a.btn-act:hover{
-  /* color: #353561;
-  background-color: #f9a72f;
-  border-color: #f9a72f; */
+  border-color: #FF9800;
+  background: #FF9800;
 }
