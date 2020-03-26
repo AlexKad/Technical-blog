@@ -15,6 +15,18 @@ body{
   opacity: 1;
 }
 
+.navbar-light .navbar-nav .nav-link{
+  color: #333;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link{
+  color: #17a2b8;
+  font-weight: bold;
+}
+
 section{
   padding: 50px 0;
 }
