@@ -149,7 +149,7 @@ title: "Template 2"
 <section class="act main-bg">
   <div class="container">
       <h4 class="text-center">Are you looking for quality long live solution for your business?</h4>
-      <div class="row justify-content-md-center py-3">
+      <div class="row justify-content-center py-3">
         <button class="btn btn-outline-light">Contact us</button>
       </div>
   </div>
@@ -158,23 +158,23 @@ title: "Template 2"
 
 <section id="features" class="features">
   <div class="container-fluid my-5">
-    <div class="row h-100 py-3 justify-content-center">
-      <div class="col-4 col-md-3">
-        <div class="card text-center p-3">
+    <div class="row py-3 justify-content-center">
+      <div class="col-12 col-md-3">
+        <div class="card text-center p-3 h-100">
           <i class="fas fa-truck fa-3x main-color p-3"></i>
           <h4>Free shipping</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
         </div>
       </div>
-      <div class="col-4 col-md-3">
-        <div class="card text-center p-3">
+      <div class="col-12 col-md-3">
+        <div class="card text-center p-3 h-100">
           <i class="fas fa-money-bill-wave fa-3x main-color p-3"></i>
           <h4>100% money back</h4>
           <p>Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
       </div>
-      <div class="col-4 col-md-3">
-        <div class="card text-center p-3">
+      <div class="col-12 col-md-3">
+        <div class="card text-center p-3 h-100">
           <i class="fas fa-headphones-alt fa-3x main-color p-3"></i>
           <h4>24/7 support</h4>
           <p>Lorem ipsum dolor sit amet.</p>
@@ -186,33 +186,41 @@ title: "Template 2"
 
 <section class="order bg-light" id="order">
   <div class="container">
-    <h1 class="main-color mb-4">Pre-order now</h1>
-    <form class="mb-5 justify-content-center">
-      <div class="form-group row justify-content-center">
-        <div class="col-12 col-md-4">
-          <input type="text" class="form-control" id="inputName" placeholder="Your name">
-        </div>
-        <div class="col-12 col-md-4">
-          <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Email address">
-        </div>
-        <div class="col-12 col-md-4">
-          <input type="text" class="form-control" id="inputPhone" placeholder="Phone number">
-        </div>
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 form-wrapper">
+        <h1 class="main-color mb-4">Pre-order now</h1>
+        <form class="justify-content-center">
+          <div class="form-group row justify-content-center">
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="inputName" placeholder="Your name">
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="inputPhone" placeholder="Phone number">
+            </div>
+          </div>
 
-      <div class="form-group row justify-content-center">
-        <div class="col-12">
-          <textarea class="form-control" id="inputOrder" rows="5" placeholder="I would like to order..."></textarea>
-        </div>
+          <div class="form-group row justify-content-center">
+            <div class="col-12">
+              <textarea class="form-control" id="inputOrder" rows="5" placeholder="I would like to order..."></textarea>
+            </div>
+          </div>
+          <div class="form-check row">
+            <div class="col-12 col-md-5">
+              <input type="checkbox" class="form-check-input" id="subscribeCheck">
+              <label class="form-check-label" for="subscribeCheck">I want to recieve special offers</label>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-10 col-md-7">
+              <button type="submit" class="btn btn-outline-info">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="form-check row">
-        <div class="col-5">
-          <input type="checkbox" class="form-check-input" id="subscribeCheck">
-          <label class="form-check-label" for="subscribeCheck">I want to recieve special offers</label>
-        </div>
-      </div>
-      <button type="submit" class="mx-auto my-3 btn btn-outline-info">Submit</button>
-    </form>
+    </div>
   </div>
 </section>
 
