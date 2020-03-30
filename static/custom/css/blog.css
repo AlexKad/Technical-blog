@@ -40,7 +40,11 @@ code { padding: 3px; }
 
 .header{
 	overflow: hidden;
-	background-color: #5e5ea5;
+	/* background-color: #5e5ea5; */
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   letter-spacing: 0.3em;
   font-family: 'Zilla Slab', serif;
@@ -60,7 +64,7 @@ code { padding: 3px; }
 }
 
 .header .navbar a:hover{
-	background-color: #5e5ea5;
+	background-color: inherit;
 	border-bottom: 1px solid white;
 }
 

@@ -27,7 +27,16 @@ html, body{
 .header{
 	height:100vh;
 	overflow: hidden;
-	background-color: #5e5ea5;
+	/* background-color: #5e5ea5; */
+  /* background: #6819e8;
+    background: -moz-linear-gradient(left, #6819e8 0%, #7437d0 35%, #615fde 68%, #6980f2 100%);
+    background: -webkit-linear-gradient(left, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%);
+    background: linear-gradient(to right, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); */
+
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   letter-spacing: 0.3em;
   font-family: 'Zilla Slab', serif;
@@ -44,7 +53,7 @@ html, body{
 
 .header .navbar a:hover,
 .header .navbar a:focus{
-	background-color: #5e5ea5;
+	background-color: inherit;
 	border-bottom: 1px solid white;
 }
 
@@ -63,7 +72,7 @@ html, body{
   margin-top: 10px;
 	overflow: hidden;
 	white-space: nowrap;
-	margin: 0 auto;
+	margin: 15px auto;
 	width:12em;
 	animation:
 	    typing 1.8s steps(14, end),
@@ -170,23 +179,24 @@ ul.skillset{
 
 .custom-progressbar {
 	background-color: #e6e6e6;
-  	border-radius: 2px;
-  	height: 20px;
-  	width: calc(100% - 150px);
-  	margin-left: 10px;
-  	display: inline-block;
-  	vertical-align: middle;
-  	overflow: hidden;
+	border-radius: 5px;
+	height: 10px;
+	width: calc(100% - 150px);
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
 }
 
 .custom-progressbar .progress-value{
-	background-color: #4CAF50;
-	background: linear-gradient(to right, #81ce84, #4CAF50);
+	/* background-color: #4CAF50;
+	background: linear-gradient(to right, #81ce84, #4CAF50); */
+  background: #8980FE;
+  background: linear-gradient(to right,#2196F3,#9b43bf);
 	height: 20px;
 }
 
 ul.statements{
-	margin-top:30px;
 	list-style: none;
 	padding-left: 20px;
 }
@@ -203,7 +213,10 @@ ul.statements{
 ul.statements .highlighted{
 	font-size: 1.5rem;
 	font-weight: bold;
-	color:#33458c;
+  color: #6d65e7;
+  /* color: #596ee6; */
+	/* color:#33458c; */
+  /* color: #8980FE; */
 }
 
 .resume-links{

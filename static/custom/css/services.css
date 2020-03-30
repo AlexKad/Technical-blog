@@ -24,7 +24,8 @@
   line-height: 1.5;
 }
 
-h3, h4 { color: #45467b; }
+/* h3, h4 { color: #45467b; } */
+h3,h4{ color: #5a5b9e; }
 
 .bg-main{ background: #5e5ea5; }
 
@@ -41,16 +42,25 @@ h3, h4 { color: #45467b; }
 .features{
   padding: 50px 0;
 }
-.features .card h4{
-  font-size: 20px;
-  font-weight: 400;
-  color: #45467b;
-}
+
 .features .card{
-  font-size:14px;
-  font-weight: 400;
+  font-size:15px;
+  font-weight: 100;
   overflow: hidden;
   border: 0px;
+  padding: 2px;
+}
+
+.features .card h4{
+  font-size: 22px;
+  font-weight: 500;
+  color: #45467b;
+}
+
+
+.features .card:hover{
+  border: 2px solid #5d5ea4;
+  padding: 0;
 }
 
 .features .card:before{
@@ -67,8 +77,8 @@ h3, h4 { color: #45467b; }
 }
 
 .features .card .icon{
-  color: #5e5ea5;
-  /* margin: 10px; */
+  /* color: #5e5ea5; */
+  color:#5a5b9e;
   margin-top: 25px;
   margin-left:20px;
   font-size: 2.3em;
@@ -101,6 +111,8 @@ h3, h4 { color: #45467b; }
 
 .act {
   padding: 35px 0 20px 0;
+  background: #5e5ea5;
+  background: linear-gradient(to right,#8e54e9,#4776e6);
 }
 
 .act a.btn-act{
