@@ -98,7 +98,8 @@ html, body{
 }
 
 .header .buttons a{
-	color: #3c3c3c;
+	/* color: #3c3c3c; */
+  color:#464646;
 	text-decoration: none;
 }
 .header .buttons a:hover{
