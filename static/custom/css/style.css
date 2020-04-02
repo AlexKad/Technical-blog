@@ -27,12 +27,6 @@ html, body{
 .header{
 	height:100vh;
 	overflow: hidden;
-	/* background-color: #5e5ea5; */
-  /* background: #6819e8;
-    background: -moz-linear-gradient(left, #6819e8 0%, #7437d0 35%, #615fde 68%, #6980f2 100%);
-    background: -webkit-linear-gradient(left, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%);
-    background: linear-gradient(to right, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); */
-
   background: #4776E6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -118,6 +112,20 @@ a.viewmore:visited{
 a.viewmore:hover{
 	color: #343434;
 }
+
+.header-highlighted:after{
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: #6d65e7;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 
 .about,
 .skills,
@@ -215,9 +223,6 @@ ul.statements .highlighted{
 	font-size: 1.5rem;
 	font-weight: bold;
   color: #6d65e7;
-  /* color: #596ee6; */
-	/* color:#33458c; */
-  /* color: #8980FE; */
 }
 
 .resume-links{

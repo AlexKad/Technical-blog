@@ -28,10 +28,10 @@
 
   <div class="d-flex justify-content-between">
     {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}">  Newer Posts </a>
+        <a class="btn" href="{{ .Paginator.Prev.URL }}">  Newer Posts </a>
     {{ end }}
     {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}">  Older Posts </a>
+        <a class="btn" href="{{ .Paginator.Next.URL }}">  Older Posts </a>
     {{ end }}
   </div>
 

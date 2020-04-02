@@ -28,7 +28,7 @@ html, body{
 	color: #555;
 }
 a{
-  color: #337ab7;
+  color: #3F51B5;
   text-decoration: none;
 }
 a:focus,
@@ -268,4 +268,34 @@ a.tag{
 a.tag:hover,
 a.tag:active{
   text-decoration: none;
+}
+
+.btn{
+  color: #fff;
+  border-color: #5570e6;
+  background: #5570e6;
+  border-radius: 25px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: 0;
+}
+.btn:active,
+.btn:hover,
+.btn:focus{
+  color: #fff;
+  border-color: #5d5ea4;
+  background: #5d5ea4;
+  box-shadow: none;
+  outline: 0;
+  -moz-outline-style: none;
+}
+a.btn:active,
+a.btn:hover,
+a.btn:focus{
+  box-shadow: none;
+  outline: 0;
+  -moz-outline-style: none;
 }
