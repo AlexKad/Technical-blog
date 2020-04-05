@@ -4,35 +4,45 @@
 <head>
   {{ partial "head" . }}
 
-  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.22">
+
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kalam|Roboto:100&display=swap" rel="stylesheet">
 
 
   <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/vendors/fa5/css/fontawesome.min.css">
   <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/vendors/fa5/css/brands.min.css">
-
+  <link rel="stylesheet" href="{{.Site.BaseURL}}/custom/css/services.css?v=0.23">
 </head>
 <body>
 
   <header class="header">
-		<nav class="navbar" role="navigator">
-			<div class="container-fluid">
-          <ul class="nav ml-auto pt-3">
-  					<li class="active"><a href="{{.Site.BaseURL}}">About me</a></li>
-            <li><a href="{{.Site.BaseURL}}/services/">Services</a></li>
-  					<li><a href="{{.Site.BaseURL}}/post/">Blog</a></li>
-  				</ul>
-			</div>
-		</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{.Site.BaseURL}}">About me</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{.Site.BaseURL}}/services/">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{.Site.BaseURL}}/post/">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div class="container">
-      <div class="row w-100">
+      <div class="row">
         <div class="logo-holder row mx-auto">
           <h3 class="row">A1<div>eksandra&nbsp;</div>O<div>rlova</div></h3>
         </div>
       </div>
-      <div class="row w-100">
+      <div class="row">
         <h5 class="w-100 text-center">Web design &amp; development</h5>
       </div>
     </div>
@@ -116,7 +126,7 @@
   <section class="act">
     <div class="container">
       <h4 class="text-center text-white">Are you ready to empower your business?</h4>
-      <div class="row justify-content-md-center py-3">
+      <div class="row justify-content-center py-3">
         <a class="btn btn-act">Request a quote</a>
       </div>
     </div>

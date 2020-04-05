@@ -24,6 +24,18 @@
   line-height: 1.5;
 }
 
+@media (max-width: 576px) {
+  .logo-holder h3{
+    font-size:30px;
+    line-height: 1;
+
+  }
+  .logo-holder h3 div{
+    font-size:20px;
+    line-height: 1.5;
+  }
+}
+
 /* h3, h4 { color: #45467b; } */
 h3,h4{ color: #5a5b9e; }
 
