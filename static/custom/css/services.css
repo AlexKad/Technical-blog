@@ -143,12 +143,3 @@ h3,h4{ color: #5a5b9e; }
   border-color: #FF9800;
   background: #FF9800;
 }
-
-@media (max-width: 767px) {
-  .text-xs-center {
-    text-align: center;
-  }
-  .text-xs-justify{
-    text-align: justify;
-  }
-}
