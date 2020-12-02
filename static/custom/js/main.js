@@ -8,34 +8,6 @@
  			 function(){ $(hash).addClass('active'); });
  });
 
-$('#back-to-top').click(function (e) {
-    $('body,html').animate({ scrollTop: 0 }, window.innerHeight);
-    $('#back-to-top').fadeOut();
-    return false;
-});
-
-  window.sr = ScrollReveal();
-  sr.reveal('.progress-value', {
-    delay: 100,
-    duration: 1000,
-    origin: 'left',
-    distance: '100%',
-    easing: 'ease-out'
-  });
-
-  let step = {
-    delay: 100,
-    duration: 1000,
-    distance: '100%',
-    easing: 'ease-out'
-  };
-
-  sr.reveal('.step-1', {...step, origin: 'right'});
-  sr.reveal('.step-2', {...step, origin: 'left'});
-  sr.reveal('.step-3', {...step, origin: 'right'});
-  sr.reveal('.step-4', {...step, origin: 'left'});
-  sr.reveal('.step-5', {...step, origin: 'right'});
-
 
 function activateScrollSection(){
  if ($(this).scrollTop() > window.innerHeight/1.3) {
@@ -45,10 +17,33 @@ function activateScrollSection(){
    }
 
   $('#back-to-top').click(function (e) {
-     $('body,html').animate({ scrollTop: 0 }, window.innerHeight);
+     $('body,html').stop(true,false).animate({ scrollTop: 0 }, window.innerHeight);
      $('#back-to-top').fadeOut();
      return false;
   });
 }
 
-window.addEventListener('scroll', activateScrollSection)
+window.addEventListener('scroll', activateScrollSection);
+
+
+window.sr = ScrollReveal();
+sr.reveal('.progress-value', {
+  delay: 100,
+  duration: 1000,
+  origin: 'left',
+  distance: '100%',
+  easing: 'ease-out'
+});
+
+let step = {
+  delay: 100,
+  duration: 1000,
+  distance: '100%',
+  easing: 'ease-out'
+};
+
+sr.reveal('.step-1', {...step, origin: 'right'});
+sr.reveal('.step-2', {...step, origin: 'left'});
+sr.reveal('.step-3', {...step, origin: 'right'});
+sr.reveal('.step-4', {...step, origin: 'left'});
+sr.reveal('.step-5', {...step, origin: 'right'});
