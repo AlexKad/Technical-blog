@@ -47,3 +47,12 @@ sr.reveal('.step-2', {...step, origin: 'left'});
 sr.reveal('.step-3', {...step, origin: 'right'});
 sr.reveal('.step-4', {...step, origin: 'left'});
 sr.reveal('.step-5', {...step, origin: 'right'});
+
+
+//register service worker for offline mode
+//progressive enhancement: old browsers won't break
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+          .register('./custom/js/service-worker.js')
+          .then(function() { console.log("Service Worker Registered"); });
+}
