@@ -17,12 +17,8 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName)
     .then(cache => {
-      try{
-        cache.addAll(filesToCache);
-      }
-      catch(err){
-        console.warn('error while caching files '+ cacheName,  err);
-      }
+      try{ cache.addAll(filesToCache); }
+      catch(err){ console.warn('error while caching files '+ cacheName,  err); }
     })
   );
 });
