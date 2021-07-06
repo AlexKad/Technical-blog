@@ -1,0 +1,40 @@
+---
+title: "DOM, BOM and other browser tools overview"
+date: 2020-08-12T14:16:19-07:00
+tags: ["javascript", "browser"]
+description: "JS nowdays is powerfull enough and it can be used not only by browsers, but also
+  by web-servers and different types of devices(aka IoT devices). Each of this host environments
+  provides JS some tools to maintain platform-specific functionality. This article is a quick
+  look of what kind of instruments web browsers provides to JS."
+draft: true
+---
+
+<p>JS nowdays is powerfull enough and it can be used not only by browsers, but also
+  by web-servers and different types of devices(aka IoT devices). Each of this host environments
+  provides JS some tools to maintain platform-specific functionality. This article is a quick
+  look of what kind of instruments web browsers provides to JS.
+</p>
+
+<p>There is a "root" element inside each browser that's called <b>window</b>. It is a global object
+  for JS code and it provides methods to contol browser window.
+
+  <!-- TODO: HOW DOM AND BOM relates to window? -->
+</p>
+<img class="d-block mx-auto" style="max-width:400px;" src="../../blog-img/dom-bom-js.png"></img>
+<h4>DOM</h4>
+<p>Document Object Model, or DOM for short is a browser tool, that gives developer access to the page elements. DOM represents all page content as objects (DOM nodes) that can be modified.</p>
+
+<p>DOM provides tools to
+  <ul>
+    <li>"walk" through the document <span class="font-weight-bold">(elem.parentNode, elem.childNodes, etc.)</span></li>
+    <li>search throught the document <span class="font-weight-bold">(elem.querySelector, document.getElementById, elem.getElementsByTagName, etc.)</span> </li>
+    <li>modify document <span class="font-weight-bold">(document.createElement, node.append, node.remove, etc.)</span></li>
+  </ul>
+
+  Read <a href="../../post/dom-manipulation" target="_self" title="Dom Manipulation">this</a> article for more.
+</p>
+
+
+<h4>BOM</h4>
+<p>BOM stands for Browser Object Model and represents objects provided by browser (navigator, location, etc.)
+   and basic functions for interaction (alert, confirm, prompt, setTimeout, etc.)</p>
