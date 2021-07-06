@@ -1,24 +1,155 @@
+
 ---
-title: "DOM, BOM and other browser tools overview"
-date: 2020-08-12T14:16:19-07:00
-tags: ["javascript", "browser"]
-description: ""
-draft: true
+title: "DOM manipulation"
+date: 2021-06-27T22:20:48+04:00
+tags: ["javascript", "browser", "DOM"]
+description: "Document Object Model, or DOM for short, is a browser tool, that gives developer access to the page elements (to add new, modify and delete them). DOM represents all page content as objects that can be modified."
+draft: false
 ---
 
-<p>JS nowdays is powerfull enough and it can be used not only by browsers, but also
-  by web-servers and different types of devices(aka IoT devices). Each of this host environments
-  provides JS some tools to maintain platform-specific functionality. This article is a quick
-  look of what kind of instruments web browsers providers to the JS.
+<p>Document Object Model, or DOM for short, is a browser tool, that gives developer access to the page elements (to add new, modify and delete them). DOM represents all page content as objects that can be modified.
 </p>
-<p>There is a "root" element inside each browser that's called <b>window</b>. It is a global object
-  for JS code and it provides methods to contol browser window (e.g. change style).
 
-  <!-- TODO: HOW DOM AND BOM relates to window? -->
+<p>Every HTML tag is an object. The text inside a tag is an object as well.
+ The <code>document</code> object (and a DOM node) that represents the whole document.
 </p>
-<p>"Document" is another browser tool, that gives developer access to the page elements (to add new, modify and delete them).
-  Document Object Model, or DOM for short
-</p>
-<p><i>Note:server-side scripts that download HTML pages and process them can also use DOM (with some limitations). </i></p>
 
-<p></p>
+<p>Even the &lt;!DOCTYPE...&gt; directive at the very beginning of HTML  and all code comments are also a DOM nodes.
+ <code>Document</code> is an entry point to DOM. Remember: In the DOM, the <i>null</i> value means “doesn’t exist” or <b>doesn't rendered yet</b>.
+</p>
+<h5 class="mt-4">DOM nodes</h5>
+<p>Each DOM node belongs to the corresponding built-in class.
+  <ul>
+    <li><span class="font-weight-bold">EventTarget</span> – is the root “abstract” class. </li>
+    <li><span class="font-weight-bold">Node</span> – is also an “abstract” class, serving as a base for DOM nodes. It provides the core tree functionality: parentNode, nextSibling, childNodes</li>
+    <li><span class="font-weight-bold">Element</span> – is a base class for DOM elements. It provides element-level navigation like nextElementSibling, children and searching methods like getElementsByTagName, querySelector. </li>
+    <li><span class="font-weight-bold">HTMLElement</span> – is finally the basic class for all HTML elements. </li>
+  </ul>
+</p>
+<p>Main DOM node properties are:
+  <ul>
+    <li><span class="font-weight-bold">nodeType</span>  (1-for element nodes, 3 for text nodes, etc.)</li>
+    <li><span class="font-weight-bold">nodeName/tagName</span> </li>
+    <li><span class="font-weight-bold">innerHTML</span> can be overwritten <code>elem.innerHTML+="more html"</code></li>
+    <li><span class="font-weight-bold">outerHTML</span> !! writing to outerHTML does not change the element, but it inserts new comntent inside document.</li>
+    <li><span class="font-weight-bold">nodeValue/data</span> </li>
+    <li><span class="font-weight-bold">textContent</span> </li>
+    <li><span class="font-weight-bold">hidden</span> When set to true, does the same as CSS display:none. </li>
+  </ul>
+</p>
+<p>HTML attributes (id, text, value, class, style, etc.) also can be found and changed while manipulating with DOM elements by using the following functions:
+  <ul>
+    <li>elem.hasAttribute(name)</li>
+    <li>elem.getAttribute(name)</li>
+    <li>elem.setAttribute(name, value)</li>
+    <li>elem.removeAttribute(name)</li>
+    <li>elem.attributes</li>
+  </ul>
+</p>
+<h5>Navigation properties: ways to "walk" through the DOM nodes.</h5>
+<p><pre><code>
+  document.documentElement --&gt; &lt;html&gt;
+  document.body          --&gt;  &lt;body&gt;
+  document.head        --&gt; &lt;head&gt;</code>
+ </pre>
+<p/>
+<p>For all nodes (text nodes, element nodes, and even comment nodes if they exist.
+  <ul class="font-weight-bold">
+    <li> elem.parentNode</li>
+    <li> elem.childNodes , elem.firstChild , elem.lastChild</li>
+    <li> elem.previousSibling , elem.nextSibling</li>
+  </ul>
+</p>
+<p>In most cases we need only element nodes, so to manipulate with elements only use the following navigation links:
+  <ul class="font-weight-bold">
+    <li> elem.parentElement</li>
+    <li> elem.children , elem.firstElementChild , elem.lastElementChild</li>
+    <li> elem.previousElementSibling , elem.nextElementSibling</li>
+  </ul>
+</p>
+
+<p>ChildNodes and children are not arrays, it's a collection of elements. To iterate through elements, use for ... of, and create a "real array"
+  if need to use array functions (e.g. <code>Array.from(elem.children).filter</code>)
+</p>
+
+  <h5 class="mt-4">Navigation functions: searching through document</h5>
+  <p>
+    <ul>
+      <li><span class="font-weight-bold">elem.querySelector(css)</span>
+        <i class="fa fa-question-circle" title='returns the first element for the given CSS selector.'></i>
+      </li>
+      <li><span class="font-weight-bold">elem.querySelectorAll(css)</span>
+        <i class="fa fa-question-circle" title='returns all elements (not nodes) inside elem matching the given CSS selector. Can use pseudo-classes as well.'></i>
+      </li>
+    </ul>
+  </p>
+  <p>
+    <ul>
+      <li><span class="font-weight-bold">document.getElementById(id)</span> <i class="fa fa-exclamation-circle" title='can be called only on document object'></i></li>
+      <li><span class="font-weight-bold">document.getElementsByName(name)</span> <i class="fa fa-exclamation-circle" title='can be called only on document object'></i></li>
+    </ul>
+  </p>
+  <p>
+    <ul>
+      <li class="font-weight-bold">elem.getElementsByTagName(tag)</li>
+      <li class="font-weight-bold">elem.getElementsByClassName(className)</li>
+      <li><span class="font-weight-bold">elem.closest(css)</span>
+        <i class="fa fa-question-circle" title='goes up from the element and checks each of parents, if it matches the selector, then the search stops, and the ancestor is returned. The elem itself is also included in the search.'></i>
+      </li>
+    </ul>
+  </p>
+
+  <h5 class="mt-4">Modifying the document</h5>
+  <p>To create new nodes:
+    <pre><code>
+  document.createElement(tag)   // creates an element with the given tag
+  document.createTextNode(value)// creates a text node (rarely used)
+  elem.cloneNode(deep)          // clones the element
+                                //if deep==true then with all descendants
+  </code></pre>
+  </p>
+
+  <p>To insert or remove nodes:
+    <pre><code>
+  node.append(...nodes or strings)  // insert into node, at the end
+  node.prepend(...nodes or strings) // insert into node, at the beginning
+  node.before(...nodes or strings)  // insert right before node
+  node.after(...nodes or strings)   // insert right after node
+
+  node.replaceWith(...nodes or strings)// replace node
+  node.remove() // remove the node
+
+
+  div.before(document.createElement('hr'), 'some text');
+</code></pre>
+  </p>
+
+  <p>To insert HTML:
+    <pre><code>
+  elem.insertAdjacentHTML(where, html)
+                // inserts it depending on the value of where:
+                // "beforebegin" – insert html right before elem
+                // "afterbegin" – insert html into elem, at the beginning
+                // "beforeend" – insert html into elem, at the end
+                // "afterend" – insert html right after elem
+
+  div.insertAdjacentHTML('beforebegin', '&lt;p&gt;Hello&lt;/p&gt;');
+  </code></pre>
+  </p>
+
+  <p><span class="font-weight-bold">DocumentFragment</span> is a special DOM node that serves as a wrapper to pass around lists of nodes. E.g.:
+    <pre><code>
+  function getListContent() {
+    let fragment = new DocumentFragment();
+
+    for(let i=1; i<=3; i++) {
+      let li = document.createElement('li');
+      li.append(i);
+      fragment.append(li);
+    }
+    return fragment;
+  }
+
+  ul.append(getListContent());
+  </code></pre>
+  </p>

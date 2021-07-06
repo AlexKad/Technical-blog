@@ -2,12 +2,59 @@
 title: "Oh git! Cheat list to resolve git problems"
 date: 2020-03-04T20:31:15-08:00
 tags: ["git", "productivity"]
-description: ""
+description: "Git might be confusing and there are couple common cases that happen over and over again.
+   This list contains some the most popular situations and commands to resolve them."
 draft: true
 ---
 
 
 <p>
   <!-- TODO: resolve tough git situations -->
-  https://ohshitgit.com/
+  <!-- https://ohshitgit.com/ -->
+
+  <p>Git might be confusing and there are couple common cases that happen over and over again.
+     This list contains some the most popular situations and commands to resolve them. Credits to <a href="https://ohshitgit.com/" target="_blank">ohshitgit</a>.
+   </p>
+
+  <table>
+    <tr class="text-center">
+      <td><b>Case</b></td>
+      <td><b>Command &amp; Explanation</b></td>
+    </tr>
+    <tr>
+      <td>Return back to specific state or stable version (before something bad has happened)</td>
+      <td>
+        <b><code>git reflog</code></b> to see a list of changes done in git acros all branches. Need to find index BEFORE wrong changes were made. <br/>
+        <b><code>git reset HEAD@{index}</code></b> reset git to specific state
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Committed smth to master but it should have been on a brand new branch.
+      </td>
+      <td>
+        <code>git branch new-branch-name</code> create a new branch from the current state of master<br/>
+        <code>git reset HEAD~ --hard</code> remove the last commit from the master branch <br/>
+        <code>git checkout new-branch-name</code> your commit lives in this new branch now
+      </td>
+    </tr>
+    <tr>
+      <td>Merge a branch with a clean, linear history free of unnecessary merge commits</td>
+      <td><code>git checkout branch-name</code> checkout to the branch that needs to be merged <br>
+      <code>git rebase main</code> to merge commits into master branch with linear order <br/>
+      <code>git rebase -i HEAD~4</code> option   <i>-i</i> opens additional UI dialog which allows to select, omit and reoder commits
+    </td>
+    </tr>
+    <tr>
+      <td>
+        Create a copy of specific commits from other branches into current branch
+      </td>
+      <td>
+        <code>git cherry pick commit1 commit2</code>  followed by commits ID
+      </td>
+    </tr>
+  </table>
+
 </p>
+
+<p>Great git tutoring game with awesome visualisation is here: <a href="https://learngitbranching.js.org/" target="_blank"> learngitbranching.js.org</a></p>
