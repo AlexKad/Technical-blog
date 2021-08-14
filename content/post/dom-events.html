@@ -41,9 +41,18 @@ draft: true
 
 <p>There are 3 possible ways of how assign a function (handler) for a specific event: </p>
 
-<h5>HTML attribute: </h5>
+<h5>HTML attribute </h5>
   <code>&lt;input value="Click me" onclick="alert('Clicked!')" type="button"&gt;</code> <br/>
   <code>&lt;input value="Click me" onclick="countCicks()" type="button"&gt;</code>
 
-  <h5 class="mt-3">DOM property: </h5>
-    <code>elem.onclick = function </code>  (no parentesis needed, we assign a function, not a function call)
+<h5 class="mt-3">DOM property </h5>
+  <code>elem.onclick = function </code>  (no parentesis needed, we assign a function, not a function call)
+
+<h5 class="mt-3">addEventListener </h5>
+<p><code>onclick</code> does not allow to assign multiple handlers to one element.
+   It will rewrite the existing every time you assign the new handler function. <code>addEventListener</code>
+   allows to add as many handlers as needed (and remove them by using <code>removeEventListener</code>)</p>
+
+   <p><code>elem.addEventListener( "click" , () => alert('Cool!'));</code></p>
+   <code>function handler2(){ alert ('this is cool too!'); }</code><br/>
+   <code>elem.addEventListener( "click" , handler2);</code></p>
