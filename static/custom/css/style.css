@@ -283,10 +283,6 @@ ul.statements .highlighted{
 	font-family: 'Open Sans', sans-serif;
 }
 
-.experience .step>div:hover{
-	transform: scale(1.1);
-}
-
 .experience .step .description{
 	border-top: 2px solid #ddd;
 	padding:10px;
