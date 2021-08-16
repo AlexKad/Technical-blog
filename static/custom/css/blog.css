@@ -157,7 +157,9 @@ a.article-header:hover{
 
 .article code{
 	color: #1d2863;
-    background-color: #f3f2f9;
+  background-color: #f3f2f9;
+  font-family: monospace;
+  letter-spacing: -.5px;
 }
 .article .gif_source{
 	border: 1px solid #d8d8d8;
