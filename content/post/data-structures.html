@@ -1,0 +1,271 @@
+---
+title: "Data Structures"
+date: 2021-06-16T09:55:03-07:00
+tags: ["data structures", "interview"]
+description: "Though there are 8 data types in JS (number, bigInt, string, symbol, boolean, null, undefined and object)
+  classical CS requires much more compllicated data representation and data collections. Let's take a look at most commonly used data
+  structures and their JS representation."
+draft: false
+---
+
+
+<p>Though there are 8 data types in JS (number, bigInt, string, symbol, boolean, null, undefined and object)
+  classical CS requires much more compllicated data representation and data collections. Let's take a look at most commonly used data
+  structures and their JS representation.
+</p>
+
+<div id="structures">
+  <a data-toggle="collapse" href="#array"><h4>Array</h4></a>
+  <div id="array" data-parent="#structures" class="collapse multi-collapse">
+    <p>Array is an indexed collection and in JS there is a <b>standard build-in object</b> to represent an array.</p>
+    <p><pre><code>
+      // Create an array
+      let letters = Array.from('abc');   // ["a","b","c"]
+      let numbers= Array.of(1,2,3);      // [1,2,3]
+      let zeros = new Array(3).fill(0);  // [0,0,0];
+      let fruits = ['Apple', 'Banana'];
+
+      // Loop
+      fruits.forEach(function(item, index, array) {  // loop over an array
+        console.log(item, index)
+      });
+
+      // Insert/remove
+      let newLength = fruits.push('Orange');     // add to the end
+      let last = fruits.pop()                    // remove item from the end
+
+      let first = fruits.shift() // remove item from the front
+      let newLength = fruits.unshift('Strawberry') // add to the front
+
+      let pos = fruits.indexOf('Banana');     // find item position in the array
+      let removedItem = fruits.splice(pos, 1) // remove an item
+
+      // Copy, concat
+      let shallowCopy = fruits.slice() // this is how to make a copy
+
+      const array1 = ['a', 'b', 'c'];
+      const array2 = ['d', 'e', 'f'];
+      const array3 = array1.concat(array2);   // ["a", "b", "c", "d", "e", "f"]
+
+      // Useful methods
+
+      const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+      const result = words.filter(word => word.length > 6);
+      const found = words.find(word => word.length > 10);
+
+      const array1 = [1, 4, 9, 16];
+      const map1 = array1.map(x => x * 2);
+
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      console.log(array1.reduce(reducer));  //30
+
+      console.log(Object.keys(fruits))  // ['0', '1', '2', '5']  array is an object in JS
+      </code>
+     </pre>
+    <p/>
+  </div>
+
+  <a data-toggle="collapse" href="#list"><h4>List and Linked List</h4></a>
+  <div id="list" data-parent="#structures" class="collapse multi-collapse">
+    <p>A linked list is a linear data structure similar to an array. However, unlike arrays, elements are not stored in a particular memory location or index.
+      Nodes can easily be removed or added from a linked list without reorganizing the entire data structure. This is one advantage it has over arrays.
+      Search operations are slow in linked lists. Unlike arrays, random access of data elements is not allowed.
+      Nodes are accessed sequentially starting from the first node.
+    </p>
+    <p>
+      <pre>
+        <code>
+      class ListNode {
+          constructor(data) {
+              this.data = data;
+              this.next = null;
+          }
+      }
+
+      class LinkedList {
+          constructor(head = null) {
+              this.head = head;
+              this.size = 0;
+          }
+          // add(element)
+          // removeElement(element)
+          // isEmpty
+      }
+
+
+      let node1 = new ListNode(2);
+      let node2 = new ListNode(5);
+      node1.next = node2;
+      let list = new LinkedList(node1);
+
+      //Implementation of some methods
+
+      add(element){
+        var node = new ListNode(element);
+        var current;
+          if (this.head == null)
+              this.head = node;
+          else {
+              current = this.head;
+              while (current.next) {
+                  current = current.next;
+              }
+              current.next = node;
+          }
+          this.size++;
+      }
+
+      removeElement(element){
+          var current = this.head;
+          var prev = null;
+
+          while (current != null) {
+              if (current.data === element) {
+                  if (prev == null) {
+                      this.head = current.next;
+                  } else {
+                      prev.next = current.next;
+                  }
+                  this.size--;
+                  return current.element;
+              }
+              prev = current;
+              current = current.next;
+          }
+          return -1;
+      }
+        </code>
+      </pre>
+    </p>
+  </div>
+
+  <a data-toggle="collapse" href="#queue"><h4>Queue</h4></a>
+  <div id="queue" data-parent="#structures" class="collapse multi-collapse">
+    <p><pre>
+      <code>
+    function Queue() {
+       this.elements = [];
+    }
+    Queue.prototype.enqueue = function (e) {
+       this.elements.push(e);
+    };
+    Queue.prototype.dequeue = function () {
+      return this.elements.shift();
+    };
+    Queue.prototype.isEmpty = function () {
+      return this.elements.length == 0;
+    };
+
+    // access the element at the front of the queue without modifying it
+    Queue.prototype.peek = function () {
+      return !this.isEmpty() ? this.elements[0] : undefined;
+    };
+    Queue.prototype.length = function() {
+      return this.elements.length;
+    }
+
+    let q = new Queue();
+    for (let i = 1; i <= 7; i++) {
+      q.enqueue(i);   //[1,2,3,4,5,6]
+    }
+    console.log(q.peek()); // 1
+      </code>
+    </pre></p>
+  </div>
+
+  <a data-toggle="collapse" href="#stack"><h4>Stack</h4></a>
+  <div id="stack" data-parent="#structures" class="collapse multi-collapse">
+    <p>
+      <pre>
+        <code>
+    let stack = [];
+    stack.push(1);  // [1]
+    stack.push(2);  // [1,2]
+    stack.pop();    // 2
+
+    //Reverse a string using a stack
+    const reverseStr = function(str){
+      let stack = [];
+      for (let i = 0; i < str.length; i++) {
+          stack.push(str[i]);
+      }
+
+      let reverseStr = '';
+      while (stack.length > 0) {
+          reverseStr += stack.pop();
+      }
+      return reverseStr;
+    }
+    console.log(reverseStr('JavaScript Stack')); // "kcatS tpircSavaJ"
+        </code>
+      </pre>
+    </p>
+  </div>
+
+  <a data-toggle="collapse" href="#map"><h4>Map</h4></a>
+  <div id="map" data-parent="#structures" class="collapse multi-collapse">
+    <p>Map is a collection of key-value pairs (similar to JS object). Thanks to ES6 JS now have build-in Map object.</p>
+    <p>
+      <pre>
+        <code>
+    var mapPerson = new Map([ ["firstname", "bob"], ["lastname", "smith"], ["age", 36] ]);
+
+    //Map methods
+    mapPerson.set('city', 'NY');
+    mapPerson.has('age');  // true
+    mapPerson.get('age');  // 36
+    map.delete('lastname'); //true
+
+    for (const k of mapPerson.keys()) {
+      console.log(k)
+    }
+    for (const v of mapPerson.values()) {
+      console.log(v)
+    }
+    for (const [k, v] of mapPerson) {
+      console.log(k, v)
+    }</code>
+      </pre>
+    </p>
+  </div>
+
+  <a data-toggle="collapse" href="#set"><h4>Set</h4></a>
+  <div id="set" data-parent="#structures" class="collapse multi-collapse">
+    <p>ES6 also provides one more coleection of values: <b>Set</b> is a collection of unique values</p>
+    <p>
+      <pre>
+        <code>
+    let set = new Set();
+
+    let john = { name: "John" };
+    let pete = { name: "Pete" };
+    let mary = { name: "Mary" };
+
+    // visits, some users come multiple times
+    set.add(john);
+    set.add(pete);
+    set.add(mary);
+    set.add(john);
+    set.add(mary);
+
+    // set keeps only unique values
+    alert( set.size ); // 3
+
+    for (let user of set) {
+      alert(user.name); // John (then Pete and Mary)
+    }  </code>
+      </pre>
+    </p>
+  </div>
+
+
+  <!-- <a data-toggle="collapse" href="#tree"><h4>Tree</h4></a>
+  <div id="tree" data-parent="#structures" class="collapse multi-collapse">
+
+  </div>
+
+  <a data-toggle="collapse" href="#graph"><h4>Graph</h4></a>
+  <div id="graph" class="collapse multi-collapse">
+
+  </div> -->
+</div>
