@@ -6,7 +6,6 @@ description: "When you developing web sites in most cases you facing up with nec
 draft: false
 ---
 
-	<h2>Contact form with PHP mail() and SMTP authentication</h2>
 	<p>When you developing web sites in most cases you are facing up with necessity
 		 to create 'contact us' form. No matter if it is a simple landing page for
 		 a small business, a portfolio web site or a huge web platform, everyone wants
@@ -24,43 +23,43 @@ draft: false
 		required by many mail servers today. Luckely there is a free <a href="http://pear.php.net/package/Mail" target="_blank">PEAR Mail</a>
 		package in PHP4 and later versions, that will allow us to work with SMTP authentication.</p>
 	<pre><code>&lt;?php
-require_once "Mail.php";
+	require_once "Mail.php";
 
-// read values from user inputs
-$from = Trim(stripslashes($_POST['email']));
-$name = Trim(stripslashes($_POST['name']));
-$message = Trim(stripslashes($_POST['message']));
+	// read values from user inputs
+	$from = Trim(stripslashes($_POST['email']));
+	$name = Trim(stripslashes($_POST['name']));
+	$message = Trim(stripslashes($_POST['message']));
 
-// set your email address and subject. Make body from values above
-$to = "alex &lt;akad.alex@gmail.com&gt;";
-$subject = "New Message from website!";
-$body = "Name: ".$name."\n"."Message: ".$message;
+	// set your email address and subject. Make body from values above
+	$to = "alex &lt;akad.alex@gmail.com&gt;";
+	$subject = "New Message from website!";
+	$body = "Name: ".$name."\n"."Message: ".$message;
 
-// Set your smtp server, and login/password for authentification
-$host = "cpanel.freehosting.com";
-$username = "mailaccount@aleksandraweb.com";
-$password = "here_is_your_password";
+	// Set your smtp server, and login/password for authentification
+	$host = "cpanel.freehosting.com";
+	$username = "mailaccount@aleksandraweb.com";
+	$password = "here_is_your_password";
 
-//create headers
-$headers = array ('From' =&gt; $from,
- 		  'To' =&gt; $to,
- 		  'Subject' =&gt; $subject);
-//set smptp connection
-$smtp = Mail::factory('smtp',
- array ('host' =&gt; $host,
-   'auth' =&gt; true,
-   'username' =&gt; $username,
-   'password' =&gt; $password));
+	//create headers
+	$headers = array ('From' =&gt; $from,
+	 		  'To' =&gt; $to,
+	 		  'Subject' =&gt; $subject);
+	//set smptp connection
+	$smtp = Mail::factory('smtp',
+	 array ('host' =&gt; $host,
+	   'auth' =&gt; true,
+	   'username' =&gt; $username,
+	   'password' =&gt; $password));
 
-//send mail
-$mail = $smtp-&gt;send($to, $headers, $body);
+	//send mail
+	$mail = $smtp-&gt;send($to, $headers, $body);
 
-//handling response and possible errors
-if (PEAR::isError($mail)) {
- echo("&lt;p&gt;" . $mail-&gt;getMessage() . "&lt;/p&gt;");
-} else {
- echo("&lt;p&gt;Message successfully sent!&lt;/p&gt;");
-}
+	//handling response and possible errors
+	if (PEAR::isError($mail)) {
+	 echo("&lt;p&gt;" . $mail-&gt;getMessage() . "&lt;/p&gt;");
+	} else {
+	 echo("&lt;p&gt;Message successfully sent!&lt;/p&gt;");
+	}
 ?&gt;</code></pre>
 	<p>In the tag <code>form</code> in our html, I've added <code>action='contact.php'</code>
 		and <code>method='post'</code>. So when user clicks 'Send' button inside the form

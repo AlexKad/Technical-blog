@@ -26,14 +26,16 @@ draft: false
 	</ol>
 	<p>If there are settings that conflict with each other, the project-level configurations
 	overrides the user-level ones, and the user-level configurations overrides the system-level ones.</p>
-	<pre><code> $ git config --global user.name "Alex"
-$ git config --global user.email "email@example.com"
+<pre><code>
+	$ git config --global user.name "Alex"
+	$ git config --global user.email "email@example.com"
 
-#configure your shell to add color to Git output with this command
-$ git config --global color.ui true
+	#configure your shell to add color to Git output with this command
+	$ git config --global color.ui true
 
-#To see all your configuration settings
-$ git config --list</code></pre>
+	#To see all your configuration settings
+	$ git config --list
+</code></pre>
 </div>
 
 
@@ -42,29 +44,37 @@ $ git config --list</code></pre>
   <ol>
     <li>
 			<p>Set the path to the variable core.excludesfile</p>
-			<pre><code> $ git config --global core.excludesfile ~/.gitignore
+			<pre><code>
+	$ git config --global core.excludesfile ~/.gitignore
 
-#Find the file location
-$ git config --get core.excludesfile</code></pre>
+	#Find the file location
+	$ git config --get core.excludesfile
 
+</code></pre>
     <li>
 			<p>Create gitignore_global file in the root folder</p>
-			<pre><code> $ cd ~/
-$ touch .gitignore_global</code></pre>
+			<pre><code>
+	$ cd ~/
+	$ touch .gitignore_global
+</code>
+</pre>
 		</li>
     <li>
 			<p>Add files to ignore</p>
-      <pre> <code> $ open -a TextEdit .gitignore_global</code></pre>
+      <pre><code>	$ open -a TextEdit .gitignore_global</code></pre>
 
       <p>Most common files to ignore:
-      <pre><code> #Ignore Mac system files
-.DS_store
-#Ignore node_modules folder
-node_modules
-#Ignore files related to API keys
-.env
-#Ignore SASS config files
-.sass-cache</code></pre>
+      <pre><code>
+	#Ignore Mac system files
+	.DS_store
+	#Ignore node_modules folder
+	node_modules
+	#Ignore files related to API keys
+	.env
+	#Ignore SASS config files
+	.sass-cache
+</code>
+</pre>
       </p>
     </li>
   </ol>
