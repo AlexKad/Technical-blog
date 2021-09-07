@@ -379,7 +379,7 @@ draft: false
   </div>
 
   <a data-toggle="collapse" href="#graph"><h4>Graph</h4></a>
-  <div id="graph" class="collapse multi-collapse">
+  <div id="graph" data-parent="#structures" class="collapse multi-collapse">
     <p>A graph is a data structure where a node can have zero or more adjacent elements. The connection between two nodes is called <b>edge</b>.
       Nodes can also be called <b>vertices</b>. The <b>degree</b> is the number of edges connected to a vertex. If the edges are bi-directional, then it's an <b>undirected</b> graph.
       If the edges have a direction, then it's a <b>directed</b> graph or di-graph for short.
@@ -464,4 +464,73 @@ draft: false
       </pre>
     </p>
   </div>
+
+
+  <a data-toggle="collapse" href="#heap"><h4>Heap</h4></a>
+  <div id="heap" data-parent="#structures" class="collapse multi-collapse">
+    <p> Heap or priority queue is a tree-based structure, with a maximum (or minimum) element on the root.
+      In a max heap, for any given child node parent node value is greater than or equal to value of child.
+    </p>
+    <p>
+      <pre>
+        <code>
+  class Heap{
+    constructor(){
+        this.heap = [];
+    }
+    size(){
+        return this.heap.length;
+    }
+    insert(value){
+        this.heap.push(value);
+        this.bubbleUp();
+    }
+    bubbleUp(){
+       let ind =  this.heap.length-1;
+       while(ind > 0){
+          let el = this.heap[ind],
+              parentInd = Math.floor((ind-1)/2),
+              parent = this.heap[parentInd];
+
+          if(parent >= el) break;
+           //else swap
+          this.heap[ind] = parent;
+          this.heap[parentInd] = el;
+          ind = parentInd;
+        }
+    }
+    //extract max from heap
+    remove(){
+        let max = this.heap[0];
+        //set the smalest element at the top and sink it down
+        this.heap[0]= this.heap.pop();
+        this.sinkDown(0);
+        return max;
+    }
+
+    sinkDown(ind){
+        let leftInd = 2*ind+1,
+            rightInd = 2*ind+2,
+            largest = ind;
+      const length = this.heap.length;
+
+      // if left child is greater than parent
+      if(leftInd <= length &&  this.heap[leftInd]>this.heap[largest] ){
+          largest = leftInd;
+      }
+      // if right child is greater than parent
+      if(rightInd <= length && this.heap[rightInd]>this.heap[largest]) {
+        largest = rightInd;
+      }
+     // swap
+     if(largest !== ind){
+        [this.heap[largest], this.heap[ind]] = [this.heap[ind], this.heap[largest]]
+        this.sinkDown(largest);
+     }
+  }
+}
+        </code>
+      </pre>
+    </p>
+
 </div>
