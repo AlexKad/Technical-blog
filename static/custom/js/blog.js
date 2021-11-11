@@ -21,10 +21,21 @@ $('#back-to-top').click(function (e) {
 
 $('.blog-header').click(function(e) {
 	window.location = 'index';
-}); 
+});
 
 $('.nav-block').on('click', function(e) {
   e.preventDefault();
   var hash = $(this).data('target');
   $('html, body').animate({ scrollTop: $(hash).offset().top }, 500);
 });
+
+
+function preview(element) {
+   var newTab = window.open();
+   var imgSrc = element.dataset.img;
+
+   setTimeout(function () {
+       newTab.document.body.innerHTML = `<img src='${imgSrc}' width='100%'>`;
+   }, 0);
+   return false;
+}
