@@ -66,7 +66,7 @@ html, body{
 	overflow: hidden;
 	white-space: nowrap;
 	margin: 15px auto;
-	width:12em;
+	width:16em;
 	animation:
 	    typing 1.8s steps(14, end),
 	    blinkTextCursor 0.75 steps(14) 4s;
@@ -75,7 +75,7 @@ html, body{
 /* The typing effect */
 @keyframes typing {
   from { width: 0;  }
-  to { width: 12em }
+  to { width: 16em }
 }
 
 /* The typewriter cursor effect */
@@ -270,12 +270,20 @@ ul.statements .highlighted{
 	border-bottom: 2px solid #ddd;
 }
 
-.experience .step.step-6{ background: rgba(52, 175, 132, 1)}
-.experience .step.step-5{ background: rgba(52, 175, 171, 1)}
-.experience .step.step-4{ background: rgba(34, 148, 178, .9)}
-.experience .step.step-3{ background: rgba(31, 113, 162, .9)}
-.experience .step.step-2{ background: rgba(29, 82, 147, .9)}
-.experience .step.step-1{ background: rgba(39, 58, 140, .9)}
+.experience .step.step-0{ background: rgba(52, 175, 132, .9)}
+.experience .step.step-1{ background: rgba(52, 175, 132, .9)}
+.experience .step.step-2{ background: rgba(52, 175, 171, .9)}
+
+.experience .step.step-3{ background: rgba(34, 148, 178, .9)}
+.experience .step.step-4{ background: rgba(34, 143, 185, .9)}
+.experience .step.step-5{ background: rgba(31, 113, 162, .9)}
+.experience .step.step-6{ background: rgba(30, 95, 167, .9)}
+
+.experience .step.step-7{ background: rgba(29, 82, 147, .9)}
+.experience .step.step-8{ background: rgba(20, 53, 151, .9)}
+
+.experience .step.step-9{ background: rgba(39, 55, 140, .9)}
+
 
 .experience .step>div{
 	padding:10px;
